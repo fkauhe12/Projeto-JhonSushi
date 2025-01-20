@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jhon Sushi">
+    <title>Jhon Sushi</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Cabeçalho --> 
+    <header> 
+        <!-- Logo -->
+        <div class="logo">
+            <img src="img/jhonsushi.jpeg" alt="Logo do Jhon Sushi">
+        </div>
+        <!-- Título -->
+        <div class="text">
+            <h1> Jhon<span>Sushi</span> </h1>
+        </div>
+
+        <!-- Botão admin -->
+        <button class="admin" onclick="mostrarPainelAdmin()">
+            <i class="fas fa-user-circle"></i> 
+        </button>
+    </header>
+
+    <!-- Divisão cabeçalho -->
+    <div class="linha"></div>
+
+    <!-- Menu de navegação -->
+    <nav>
+        <ul>
+            <li><a href="index.html" class="link-nav">Niguiri</a></li>
+            <li><a href="hossomaki.html" class="link-nav">Hossomaki</a></li>
+            <li><a href="uramaki" class="link-nav">Uramakis</a></li>
+            <li><a href="hots.html" class="link-nav">Hots</a></li>
+            <li><a href="temaki.html" class="link-nav">Temakis</a></li>
+            <li><a href="combinado.html" class="link-nav">Combinados</a></li>
+            <li><a href="combinado.html" class="link-nav">Especiais</a></li>
+            <li><a href="sacola.html" class="link-nav">Sacola</a></li>
+        </ul>
+    </nav>
+
+    <!-- Título Niguiri -->
+    <div class="niguiri">
+        <h2>Niguiri</h2>
+    </div>
+
+    <!-- Contêiner dos Cards -->
+    <div class="container">
+        <!-- Card 1 -->
+        <div class="card">
+            <img src="../img/niguiri.jpg" alt="Niguiri">
+            <div class="descricao">
+                <div class="titulo-card">
+                    <h2>Salmão 05 unidades</h2>
+                </div>
+                <div class="sub">
+                    <p>Feito de arroz e Salmão.É uma escolha muito leve e saborosa.</p>
+                </div>
+                <div class="valorunid">
+                    <p>A unidade sai apenas por R$ 4,75</p>
+                </div>
+                <div class="contain">
+                    <div class="preco">
+                        <p>Valor ítem R$ 19,00</p>
+                    </div>
+                    <div class="add">
+                        <button onclick="adicionar()">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+            <img src="../img/niguiri_camarão.jpg" alt="niguiri_camarao"> 
+            <div class="descricao">
+                <div class="titulo-card">
+                    <h2>Camarão 05 unidades</h2>
+                </div>
+                <div class="sub">
+                    <p>Feito de arroz e camarão. É uma escolha saborosa além de leve</p>
+                </div>
+                <div class="valorunid">
+                    <p>A unidade sai apenas por R$ 4,25</p>
+                </div>
+                <div class="contain">
+                    <div class="preco">
+                        <p>Valor ítem R$ 17,00</p>
+                    </div>
+                    <div class="add">
+                        <button onclick="adicionar()">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+            <img src="../img/niguiri_kani.jpg" alt="Niguiri">
+            <div class="descricao">
+                <div class="titulo-card">
+                    <h2>Kani 05 Unidades</h2>
+                </div>
+                <div class="sub">
+                    <p>Feito de Kani(contém carangueijo) e Arroz, escolha deliciosa.,  </p>
+                </div>
+                <div class="valorunid">
+                    <p>A unidade sai apenas por R$ 2,50</p>
+                </div>
+                <div class="contain">
+                    <div class="preco">
+                        <p>Valor ítem R$ 10,00</p>
+                    </div>
+                    <div class="add">
+                        <button onclick="adicionar()">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card">
+            <img src="../img/niguiri_atum3.jpg" alt="Niguiri">
+            <div class="descricao">
+                <div class="titulo-card">
+                    <h2>Atum 05 </h2>
+                </div>
+                <div class="sub">
+                    <p>Feito de Atum  e arroz.É uma ótima opção para saborear o Atum.</p>
+                </div>
+                <div class="valorunid">
+                    <p>A unidade sai apenas por R$ 0,00</p>
+                </div>
+                <div class="contain">
+                    <div class="preco">
+                        <p>Valor ítem R$ 0,00</p>
+                    </div>
+                    <div class="add">
+                        <button onclick="adicionar()">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+      
+    </div>
+    <!-- Fim do contêiner -->
+     <!--Ródape-->
+    <footer>
+        <!--Rodapé parte 1-->
+        <div id="rodape1">
+            <div id="logo2">
+                <!-- Logo icone3 -->
+                <div class="logo3"></div>
+                <!-- Logo texto4 -->
+                <div class="logo4">Jhon<span>Sushi</span></div>
+            </div>
+
+                <!-- Anúncio -->
+             <div class="anuncio">
+                <h2>Aceitamos encomendas para eventos! (85) 986814614</h2>
+            </div>
+
+            <!--Midias-->
+            <div id="midia">
+                <ul>
+                    <li><a href="https://www.whatsapp.com/" target="_blank" class="link-what"><i class="fa-brands fa-whatsapp"></i></a></li>
+                    <li><a href="https://www.facebook.com/" target="_blank" class="link-face"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a href="https://www.instagram.com/" target="_blank" class="link-insta"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="https://twitter.com/" target="_blank" class="link-twit"><i class="fa-brands fa-x-twitter"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>  
+     <!--Java Script-->
+    <script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,345 @@
+   /* Resetando margens e paddings */
+   * {
+    margin: 0; /* Remove a margem padrão dos elementos */
+    padding: 0; /* Remove o padding padrão dos elementos */
+    box-sizing: border-box; /* Faz com que o padding e borda sejam incluídos no tamanho total do elemento */
+}
+
+/* Definindo a fonte padrão para o corpo da página */
+body {
+    font-family: Arial, sans-serif; /* Define a fonte padrão para a página */
+    background-color: #c9c9c9; /* Define a cor de fundo da página */
+}
+
+/* Estilo para o cabeçalho */
+header {
+    background-color: #333; /* Cor de fundo do cabeçalho */
+    padding: 20px 0; /* Espaçamento interno do cabeçalho */
+    display: flex; /* Utiliza flexbox para o layout do cabeçalho */
+    justify-content: space-between; /* Alinha a logo à esquerda, o título ao centro e o botão à direita */
+    align-items: center; /* Alinha os itens verticalmente no centro */
+    height: 100px; /* Define a altura do cabeçalho */
+    width: 100%; /* Largura total */
+    margin-top: 2px; /* Margem superior */
+}
+
+/* Estilo da imagem da logo */
+.logo img {
+    width: 120px;  /* Largura da imagem da logo */
+    height: 120px; /* Altura da imagem da logo */
+    margin-left: 20px; /* Espaço à esquerda da logo */
+    margin-right: 25px; /* Espaço à direita da logo */
+    border-radius: 50%; /* Tornando a imagem arredondada */
+    padding: 0; /* Remove qualquer padding */
+    margin-top: 10%; /* Define a margem superior para centralizar */
+}
+
+/* Estilo para o título */
+.text {
+    display: flex; /* Utiliza flexbox para o layout do título */
+    justify-content: center; /* Centraliza o título */
+    flex-grow: 1; /* Faz com que o título ocupe o espaço restante */
+}
+
+/* Estilo do título em si */
+.text h1 {
+    color: white; /* Cor do texto */
+    font-size: 70px; /* Tamanho da fonte */
+    font-weight: bold; /* Define a espessura da fonte */
+    text-align: center; /* Centraliza o texto */
+    margin-right: 20px; /* Espaço à direita do título */
+}
+
+/* Estilo do elemento span dentro do título */
+.text span {
+   color: red; /* Cor do texto dentro do span */
+}
+
+/* Estilo do botão admin */
+button.admin {
+    background-color: transparent; /* Fundo transparente */
+    border: none; /* Remove a borda do botão */
+    cursor: pointer; /* Muda o cursor para pointer quando passa sobre o botão */
+    font-size: 30%; /* Define o tamanho do ícone */
+    color: white; /* Cor do ícone */
+    display: flex; /* Utiliza flexbox para o layout do botão */
+    justify-content: center; /* Alinha o ícone no centro */
+    align-items: center; /* Alinha o ícone no centro verticalmente */
+    margin-left: auto; /* Espaço entre o título e o botão */
+    margin-right: 20px; /* Espaço à direita */
+}
+
+/* Ajuste do ícone dentro do botão admin */
+button.admin i {
+    font-size: 85px; /* Tamanho do ícone */
+    border-radius: 50%; /* Torna o ícone arredondado */
+    padding: 10px; /* Padding interno do ícone */
+    background-color: white; /* Fundo branco para o ícone */
+    color: #333; /* Cor do ícone */
+    margin-top: 20%; /* Espaço acima do ícone */
+}
+
+/* Linha */
+.linha {
+    width: auto; /* Largura automática */
+    border: 2px solid black; /* Borda preta de 2px */
+    border-collapse: collapse; /* Colapsa as bordas */
+}
+
+/* Estilo para o anúncio */
+.anuncio {
+    display: flex; /* Utiliza flexbox para o layout */
+    justify-content: center; /* Centraliza o conteúdo */
+    color: white; /* Cor do texto */
+    background-color: #333; /* Cor de fundo */
+}
+
+/* Estilo para a navegação */
+nav {
+    width: 100%; /* Largura total */
+    margin-top: 2%; /* Margem superior */
+}
+
+/* Alinha os itens da navegação */
+nav ul {
+    display: flex; /* Utiliza flexbox */
+    justify-content: space-around; /* Distribui os itens uniformemente */
+}
+
+/* Estilo para os itens da navegação */
+nav ul li {
+    list-style: none; /* Remove os marcadores das listas */
+    width: 10%; /* Largura dos itens */
+}
+
+/* Estilo para os links de navegação */
+.link-nav {
+    font-size: 2vw; /* Tamanho da fonte relativo à largura da tela */
+    color: black; /* Cor do texto */
+    font-family: Arial, sans-serif; /* Fonte */
+    cursor: pointer; /* Muda o cursor para pointer */
+    font-weight: normal; /* Peso da fonte */
+    font-style: normal; /* Estilo da fonte */
+    user-select: none; /* Desativa a seleção de texto */
+    text-decoration: none; /* Remove o sublinhado do link */
+    transition: 0.6s; /* Transição suave para o efeito de hover */
+}
+
+/* Estilo de interação quando o link é passado por cima */
+.link-nav:hover {
+    font-weight: bolder; /* Deixa o texto mais espesso */
+    color: red; /* Muda a cor para vermelho */
+}
+
+/* Título da página Niguiri */
+.niguiri {
+    display: flex; /* Utiliza flexbox para centralizar */
+    justify-content: center; /* Centraliza o título */
+    color:red; /* Cor do texto */
+    margin-top: 3%; /* Margem superior */
+    font-family: Arial, sans-serif; /* Fonte do título */
+    font-size: 30px; /* Tamanho da fonte */
+}
+
+
+/* Estilo para os cards de produtos */
+.container {
+    display: flex;
+    justify-content: center; /* Alinha os cards ao centro */
+    flex-wrap: wrap; /* Permite que os cards que não cabem na linha passem para a próxima linha */
+    gap: 50px; /* Espaçamento entre os cards */
+}
+
+/* Estilo dos cards de produtos */
+.card {
+    width: 320px; /* Largura do card */
+    border: 1px solid #ddd; /* Borda do card */
+    border-radius: 8px; /* Bordas arredondadas */
+    overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse os limites do card */
+    margin-top: 4%; /* Margem superior */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ao redor do card */
+    padding-left: 2%; /* Espaçamento interno à esquerda */
+}
+
+/* Estilo da imagem dentro do card */
+.card img {
+    width: 100%; /* Largura total da imagem */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+/* Descrição do produto dentro do card */
+.descricao {
+    padding: 15px; /* Espaçamento interno */
+}
+
+/* Título do card */
+.titulo-card h2 {
+    margin: 0; /* Remove a margem */
+    font-size: 20px; /* Tamanho da fonte */
+    font-weight: bold; /* Peso da fonte */
+    color: #bb0b0b; /* Cor do título */
+}
+
+/* Texto adicional dentro do card */
+.sub p {
+    font-size: 15px; /* Tamanho da fonte */
+    color: #bb0b0b; /* Cor do texto */
+    margin-top: 2%; /* Margem superior */
+}
+
+/* Valor da unidade no card */
+.valorunid p {
+    font-size: 16px; /* Tamanho da fonte */
+    color: #bb0b0b; /* Cor do texto */
+    font-weight: bold; /* Peso da fonte */
+    margin-top: 10px; /* Margem superior */
+}
+
+/* Contêiner para o preço e botão dentro do card */
+.contain {
+    display: flex; /* Utiliza flexbox */
+    justify-content: space-between; /* Distribui o espaço entre os itens */
+    align-items: center; /* Alinha os itens ao centro */
+}
+
+/* Preço do produto */
+.preco p {
+    font-size: 20px; /* Tamanho da fonte */
+    font-weight: bold; /* Peso da fonte */
+    color: green; /* Cor do preço */
+    margin-top: 3px; /* Margem superior */
+    justify-items: auto; /* Justifica os itens automaticamente */
+    padding: 0; /* Remove o padding */
+    margin-top: 14px; /* Margem superior */
+}
+
+/* Estilo do botão de adicionar */
+.add button {
+    background-color:green;
+    color: white;
+    border: none; /* Remove a borda */
+    padding: 7px 7px; /* Aumenta o padding para deixar o botão maior */
+    cursor: pointer; /* Muda o cursor para pointer */
+    border-radius: 50px; /* Torna o botão arredondado */
+    width: auto; /* Largura automática */
+    height: auto; /* Altura automática */
+    margin-top: 9px; /* Margem superior */
+}
+
+/* Estilo do botão quando passa o mouse sobre ele */
+.add button:hover {
+    color: black;
+    background-color: red;
+}
+
+/* Estilo do ícone dentro do botão */
+.add button i {
+    
+    font-size: 25px; /* Tamanho do ícone */
+   
+   
+}
+
+/* rodapé */
+/*Rodapé*/
+footer {
+    display:grid ;
+    background-color: black;
+    color: white;
+    padding: 1% 0 1% 0;
+    margin-top: 15px;
+    
+}
+
+/*Parte 1 Rodapé*/
+#rodape1 {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+/*Logo Secundaria Rodapé*/
+#logo2  {
+    display: flex;
+    align-items: center;
+}
+
+
+/*Texto Logo estacio 2*/
+.logo4 {
+    font-family:"Nosifer", sans-serif;
+    font-size: 3vw;
+   justify-items: center;
+   display: flex;
+}
+
+/*Link Rodapé e Tirar Estilo e seleção dos links*/
+#link-footer ul li {
+    user-select: none ;
+    list-style: none;
+}
+
+/*Decoração links */
+.link-footer {
+    color: white;
+    text-decoration: none;  
+    font-size: 2.3vw; 
+    transition: 0.5s;
+}
+
+/*Interação com links Rodapé*/
+.link-footer:hover {
+    color: red; 
+    font-size: 2.4vw;
+}
+
+/*Midias*/
+#midia {
+    display: flex;
+    align-items:center;
+    
+}
+
+/*Lista de Midia centralizar*/
+#midia ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    list-style: none;
+   
+}
+
+/*link midia estilo*/
+.link-what , .link-face , .link-twit , .link-insta {
+    color: white;
+    font-size: 4vw;
+    padding: 1vw;
+    transition: 0.6s;
+}
+
+/*Interação link Whatsapp*/
+.link-what:hover {
+    color: green;
+    font-size: 5vw;
+}
+
+/*Interação link Facebook*/
+.link-face:hover {
+    color: blue;
+    font-size: 5vw;
+}
+
+/*Interação link twitter*/
+.link-twit:hover {
+    color: purple;
+    font-size: 5vw;
+}
+
+/*Interação link Insta*/
+.link-insta:hover {
+    color: transparent;
+    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+    background-clip: text;  
+    font-size: 5vw;
+}
