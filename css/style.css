@@ -3,6 +3,7 @@
     margin: 0; /* Remove a margem padrão dos elementos */
     padding: 0; /* Remove o padding padrão dos elementos */
     box-sizing: border-box; /* Faz com que o padding e borda sejam incluídos no tamanho total do elemento */
+    border: 1px solid black;
 }
 
 /* Definindo a fonte padrão para o corpo da página */
@@ -14,40 +15,45 @@ body {
 /* Estilo para o cabeçalho */
 header {
     background-color: #333; /* Cor de fundo do cabeçalho */
-    padding: 20px 0; /* Espaçamento interno do cabeçalho */
     display: flex; /* Utiliza flexbox para o layout do cabeçalho */
     justify-content: space-between; /* Alinha a logo à esquerda, o título ao centro e o botão à direita */
     align-items: center; /* Alinha os itens verticalmente no centro */
-    height: 100px; /* Define a altura do cabeçalho */
+    height: 100%; /* Define a altura do cabeçalho */
     width: 100%; /* Largura total */
-    margin-top: 2px; /* Margem superior */
 }
 
 /* Estilo da imagem da logo */
+.logo {
+    width: 25%; /* Largura da logo */
+    height: 100%; /* Altura da logo */
+    display: flex; /* Utiliza flexbox para o layout da logo */
+    justify-content: center; /* Centraliza a logo */
+    align-items: center; /* Centraliza a logo verticalmente */
+    padding: 1%; /* Espaçamento interno */
+}
+
 .logo img {
-    width: 120px;  /* Largura da imagem da logo */
-    height: 120px; /* Altura da imagem da logo */
-    margin-left: 20px; /* Espaço à esquerda da logo */
-    margin-right: 25px; /* Espaço à direita da logo */
+    width: 80%;  /* Largura da imagem da logo */
+    height: 80%; /* Altura da imagem da logo */
     border-radius: 50%; /* Tornando a imagem arredondada */
-    padding: 0; /* Remove qualquer padding */
-    margin-top: 10%; /* Define a margem superior para centralizar */
+    margin: auto;
 }
 
 /* Estilo para o título */
 .text {
     display: flex; /* Utiliza flexbox para o layout do título */
     justify-content: center; /* Centraliza o título */
-    flex-grow: 1; /* Faz com que o título ocupe o espaço restante */
+    align-items: center; /* Centraliza o título verticalmente */
+    width: 50%; /* Largura total */
+    height: 100%;  
 }
 
 /* Estilo do título em si */
 .text h1 {
     color: white; /* Cor do texto */
-    font-size: 70px; /* Tamanho da fonte */
+    font-size: 8vw; /* Tamanho da fonte */
     font-weight: bold; /* Define a espessura da fonte */
     text-align: center; /* Centraliza o texto */
-    margin-right: 20px; /* Espaço à direita do título */
 }
 
 /* Estilo do elemento span dentro do título */
@@ -56,6 +62,15 @@ header {
 }
 
 /* Estilo do botão admin */
+.admin-button {
+    width: 25%; /* Largura do botão */
+    height: 100%; /* Altura do botão */
+    display: flex; /* Utiliza flexbox para o layout do botão */
+    justify-content: center; /* Centraliza o botão */
+    align-items: center; /* Centraliza o botão verticalmente */
+
+}
+
 button.admin {
     background-color: transparent; /* Fundo transparente */
     border: none; /* Remove a borda do botão */
@@ -65,18 +80,17 @@ button.admin {
     display: flex; /* Utiliza flexbox para o layout do botão */
     justify-content: center; /* Alinha o ícone no centro */
     align-items: center; /* Alinha o ícone no centro verticalmente */
-    margin-left: auto; /* Espaço entre o título e o botão */
-    margin-right: 20px; /* Espaço à direita */
+    ;
 }
 
 /* Ajuste do ícone dentro do botão admin */
 button.admin i {
-    font-size: 85px; /* Tamanho do ícone */
+    font-size: 10vw; /* Tamanho do ícone */
     border-radius: 50%; /* Torna o ícone arredondado */
     padding: 10px; /* Padding interno do ícone */
     background-color: white; /* Fundo branco para o ícone */
     color: #333; /* Cor do ícone */
-    margin-top: 20%; /* Espaço acima do ícone */
+    margin: auto;
 }
 
 /* Linha */
@@ -86,13 +100,6 @@ button.admin i {
     border-collapse: collapse; /* Colapsa as bordas */
 }
 
-/* Estilo para o anúncio */
-.anuncio {
-    display: flex; /* Utiliza flexbox para o layout */
-    justify-content: center; /* Centraliza o conteúdo */
-    color: white; /* Cor do texto */
-    background-color: #333; /* Cor de fundo */
-}
 
 /* Estilo para a navegação */
 nav {
@@ -103,13 +110,14 @@ nav {
 /* Alinha os itens da navegação */
 nav ul {
     display: flex; /* Utiliza flexbox */
-    justify-content: space-around; /* Distribui os itens uniformemente */
+    justify-content: space-between;
 }
 
 /* Estilo para os itens da navegação */
 nav ul li {
     list-style: none; /* Remove os marcadores das listas */
     width: 10%; /* Largura dos itens */
+    margin: auto;
 }
 
 /* Estilo para os links de navegação */
@@ -123,12 +131,6 @@ nav ul li {
     user-select: none; /* Desativa a seleção de texto */
     text-decoration: none; /* Remove o sublinhado do link */
     transition: 0.6s; /* Transição suave para o efeito de hover */
-}
-
-/* Estilo de interação quando o link é passado por cima */
-.link-nav:hover {
-    font-weight: bolder; /* Deixa o texto mais espesso */
-    color: red; /* Muda a cor para vermelho */
 }
 
 /* Título da página Niguiri */
