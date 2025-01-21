@@ -1,247 +1,225 @@
-   /* Resetando margens e paddings */
-   * {
-    margin: 0; /* Remove a margem padrão dos elementos */
-    padding: 0; /* Remove o padding padrão dos elementos */
-    box-sizing: border-box; /* Faz com que o padding e borda sejam incluídos no tamanho total do elemento */
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Merienda:wght@300..900&display=swap');
+
+/* Resetando margens e paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
 }
 
 /* Definindo a fonte padrão para o corpo da página */
 body {
-    font-family: Arial, sans-serif; /* Define a fonte padrão para a página */
-    background-color: #c9c9c9; /* Define a cor de fundo da página */
+    font-family: Arial, sans-serif;
+    background-color: #c9c9c9;
+    height: 100%;
+    width: 100%;
 }
 
 /* Estilo para o cabeçalho */
 header {
-    background-color: #333; /* Cor de fundo do cabeçalho */
-    display: flex; /* Utiliza flexbox para o layout do cabeçalho */
-    justify-content: space-between; /* Alinha a logo à esquerda, o título ao centro e o botão à direita */
-    align-items: center; /* Alinha os itens verticalmente no centro */
-    height: 100%; /* Define a altura do cabeçalho */
-    width: 100%; /* Largura total */
+    background-color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
 }
 
 /* Estilo da imagem da logo */
 .logo {
-    width: 25%; /* Largura da logo */
-    height: 100%; /* Altura da logo */
-    display: flex; /* Utiliza flexbox para o layout da logo */
-    justify-content: center; /* Centraliza a logo */
-    align-items: center; /* Centraliza a logo verticalmente */
-    padding: 1%; /* Espaçamento interno */
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1%;
 }
 
 .logo img {
-    width: 80%;  /* Largura da imagem da logo */
-    height: 80%; /* Altura da imagem da logo */
-    border-radius: 50%; /* Tornando a imagem arredondada */
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
     margin: auto;
 }
 
 /* Estilo para o título */
 .text {
-    display: flex; /* Utiliza flexbox para o layout do título */
-    justify-content: center; /* Centraliza o título */
-    align-items: center; /* Centraliza o título verticalmente */
-    width: 50%; /* Largura total */
-    height: 100%;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
 }
 
-/* Estilo do título em si */
 .text h1 {
-    color: white; /* Cor do texto */
-    font-size: 8vw; /* Tamanho da fonte */
-    font-weight: bold; /* Define a espessura da fonte */
-    text-align: center; /* Centraliza o texto */
+    color: white;
+    font-size: 8vw;
+    font-weight: bold;
+    text-align: center;
 }
 
-/* Estilo do elemento span dentro do título */
 .text span {
-   color: red; /* Cor do texto dentro do span */
+    color: red;
 }
 
 /* Estilo do botão admin */
 .admin-button {
-    width: 25%; /* Largura do botão */
-    height: 100%; /* Altura do botão */
-    display: flex; /* Utiliza flexbox para o layout do botão */
-    justify-content: center; /* Centraliza o botão */
-    align-items: center; /* Centraliza o botão verticalmente */
-
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 button.admin {
-    background-color: transparent; /* Fundo transparente */
-    border: none; /* Remove a borda do botão */
-    cursor: pointer; /* Muda o cursor para pointer quando passa sobre o botão */
-    font-size: 30%; /* Define o tamanho do ícone */
-    color: white; /* Cor do ícone */
-    display: flex; /* Utiliza flexbox para o layout do botão */
-    justify-content: center; /* Alinha o ícone no centro */
-    align-items: center; /* Alinha o ícone no centro verticalmente */
-    ;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 30%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Ajuste do ícone dentro do botão admin */
 button.admin i {
-    font-size: 10vw; /* Tamanho do ícone */
-    border-radius: 50%; /* Torna o ícone arredondado */
-    padding: 10px; /* Padding interno do ícone */
-    background-color: white; /* Fundo branco para o ícone */
-    color: #333; /* Cor do ícone */
+    font-size: 10vw;
+    border-radius: 50%;
+    padding: 10px;
+    background-color: white;
+    color: #333;
     margin: auto;
 }
 
 /* Linha */
 .linha {
-    width: auto; /* Largura automática */
-    border: 2px solid black; /* Borda preta de 2px */
-    border-collapse: collapse; /* Colapsa as bordas */
+    width: auto;
+    border: 2px solid black;
+    border-collapse: collapse;
 }
-
 
 /* Estilo para a navegação */
 nav {
-    width: 100%; /* Largura total */
-    height: 100%; /* Altura total */
-    margin-top: 1%; /* Margem superior */
+    width: 100%;
+    height: 100%;
+    margin-top: 1%;
 }
 
-/* Alinha os itens da navegação */
 nav ul {
-    display: flex; /* Utiliza flexbox */
+    display: flex;
     justify-content: space-between;
-    height: 100%; /* Altura total */
-    
+    height: 100%;
 }
 
-/* Estilo para os itens da navegação */
 nav ul li {
-    list-style: none; /* Remove os marcadores das listas */
+    list-style: none;
     margin: auto;
 }
 
-/* Estilo para os links de navegação */
 .link-nav {
-    font-size: 3vw; /* Tamanho da fonte relativo à largura da tela */
+    font-size: 3vw;
     font-weight: bolder;
     font-family: Arial, Helvetica, sans-serif;
-    color: black; /* Cor do texto */
-    cursor: pointer; /* Muda o cursor para pointer */
-    text-decoration: none; /* Remove o sublinhado do link */
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 /* Título da página Niguiri */
 .niguiri {
-    display: flex; /* Utiliza flexbox para centralizar */
-    justify-content: center; /* Centraliza o título */
-    color:red; /* Cor do texto */
-    margin-top: 3%; /* Margem superior */
-    font-family: Arial, sans-serif; /* Fonte do título */
-    font-size: 30px; /* Tamanho da fonte */
+    display: flex;
+    justify-content: center;
+    color: red;
+    margin-top: 3%;
+    font-family: "Agbalumo", serif;
+    font-size: 7vw;
 }
-
 
 /* Estilo para os cards de produtos */
 .container {
     display: flex;
-    justify-content: center; /* Alinha os cards ao centro */
-    flex-wrap: wrap; /* Permite que os cards que não cabem na linha passem para a próxima linha */
-    gap: 50px; /* Espaçamento entre os cards */
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
 }
 
-/* Estilo dos cards de produtos */
 .card {
-    width: 320px; /* Largura do card */
-    border: 1px solid #ddd; /* Borda do card */
-    border-radius: 8px; /* Bordas arredondadas */
-    overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse os limites do card */
-    margin-top: 4%; /* Margem superior */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ao redor do card */
-    padding-left: 2%; /* Espaçamento interno à esquerda */
+    width: 320px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 4%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding-left: 2%;
 }
 
-/* Estilo da imagem dentro do card */
 .card img {
-    width: 100%; /* Largura total da imagem */
-    height: auto; /* Mantém a proporção da imagem */
+    width: 100%;
+    height: auto;
 }
 
-/* Descrição do produto dentro do card */
 .descricao {
-    padding: 15px; /* Espaçamento interno */
+    padding: 15px;
 }
 
-/* Título do card */
 .titulo-card h2 {
-    margin: 0; /* Remove a margem */
-    font-size: 20px; /* Tamanho da fonte */
-    font-weight: bold; /* Peso da fonte */
-    color: #bb0b0b; /* Cor do título */
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: #bb0b0b;
 }
 
-/* Texto adicional dentro do card */
 .sub p {
-    font-size: 15px; /* Tamanho da fonte */
-    color: #bb0b0b; /* Cor do texto */
-    margin-top: 2%; /* Margem superior */
+    font-size: 15px;
+    color: #bb0b0b;
+    margin-top: 2%;
 }
 
-/* Valor da unidade no card */
 .valorunid p {
-    font-size: 16px; /* Tamanho da fonte */
-    color: #bb0b0b; /* Cor do texto */
-    font-weight: bold; /* Peso da fonte */
-    margin-top: 10px; /* Margem superior */
+    font-size: 16px;
+    color: #bb0b0b;
+    font-weight: bold;
+    margin-top: 10px;
 }
 
-/* Contêiner para o preço e botão dentro do card */
 .contain {
-    display: flex; /* Utiliza flexbox */
-    justify-content: space-between; /* Distribui o espaço entre os itens */
-    align-items: center; /* Alinha os itens ao centro */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* Preço do produto */
 .preco p {
-    font-size: 20px; /* Tamanho da fonte */
-    font-weight: bold; /* Peso da fonte */
-    color: green; /* Cor do preço */
-    margin-top: 3px; /* Margem superior */
-    justify-items: auto; /* Justifica os itens automaticamente */
-    padding: 0; /* Remove o padding */
-    margin-top: 14px; /* Margem superior */
+    font-size: 20px;
+    font-weight: bold;
+    color: green;
+    margin-top: 3px;
+    justify-items: auto;
+    padding: 0;
+    margin-top: 14px;
 }
 
-/* Estilo do botão de adicionar */
 .add button {
-    background-color:green;
+    background-color: green;
     color: white;
-    border: none; /* Remove a borda */
-    padding: 7px 7px; /* Aumenta o padding para deixar o botão maior */
-    cursor: pointer; /* Muda o cursor para pointer */
-    border-radius: 50px; /* Torna o botão arredondado */
-    width: auto; /* Largura automática */
-    height: auto; /* Altura automática */
-    margin-top: 9px; /* Margem superior */
+    border: none;
+    padding: 7px 7px;
+    cursor: pointer;
+    border-radius: 50px;
+    width: auto;
+    height: auto;
+    margin-top: 9px;
 }
 
-/* Estilo do botão quando passa o mouse sobre ele */
 .add button:hover {
     color: black;
     background-color: red;
 }
 
-/* Estilo do ícone dentro do botão */
 .add button i {
-    
-    font-size: 25px; /* Tamanho do ícone */
-   
-   
+    font-size: 25px;
 }
 
-/* rodapé */
-/*Rodapé*/
+/* Rodapé */
 footer {
     display: flex;
     align-items: center;
@@ -250,35 +228,26 @@ footer {
     color: white;
     width: 100%;
     height: 20vw;
-
-    
-    
 }
 
-/*Link Rodapé e Tirar Estilo e seleção dos links*/
 #link-footer ul li {
     list-style: none;
 }
 
-
-/*Midias*/
+/* Mídias */
 #midia {
     display: flex;
-    align-items:center;
-    
+    align-items: center;
 }
 
-/*Lista de Midia centralizar*/
 #midia ul {
     display: flex;
     justify-content: center;
     align-items: center;
     list-style: none;
-   
 }
 
-/*link midia estilo*/
-.link-what , .link-face , .link-insta {
+.link-what, .link-face, .link-insta {
     color: white;
     font-size: 4vw;
     padding: 1vw;
@@ -293,15 +262,118 @@ footer {
     color: blue;
 }
 
-/*Interação link twitter*/
 .link-twit:hover {
     color: purple;
     font-size: 5vw;
 }
 
-/*Interação link Insta*/
 .link-insta {
     color: transparent;
     background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
     background-clip: text;
+}
+
+/* Estilos para dispositivos maiores que 768px (computadores) */
+@media (min-width: 768px) {
+    header {
+        height: 80px;
+    }
+
+    .logo {
+        width: 20%;
+        padding: 0;
+    }
+
+    .logo img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .text {
+        width: 60%;
+    }
+
+    .text h1 {
+        font-size: 2.5rem;
+    }
+
+    .admin-button {
+        width: 20%;
+    }
+
+    button.admin i {
+        font-size: 2rem;
+    }
+
+    nav ul {
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 0 15px;
+    }
+
+    .link-nav {
+        font-size: 1rem;
+    }
+
+    .niguiri {
+        font-size: 2rem;
+    }
+
+    .container {
+        gap: 20px;
+    }
+
+    .card {
+        width: 300px;
+        margin-top: 2%;
+    }
+
+    .titulo-card h2 {
+        font-size: 1.5rem;
+    }
+
+    .sub p {
+        font-size: 1rem;
+    }
+
+    .valorunid p {
+        font-size: 1.2rem;
+    }
+
+    .preco p {
+        font-size: 1.5rem;
+    }
+
+    .add button {
+        padding: 10px 15px;
+    }
+
+    .add button i {
+        font-size: 1.2rem;
+    }
+
+    footer {
+        height: 100px;
+        margin-top: 0;
+    }
+
+    .link-what, .link-face, .link-insta {
+        font-size: 1.5rem;
+        padding: 10px;
+    }
+}
+
+/* Estilos específicos para tablets (largura entre 768px e 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    footer {
+        margin-top: auto;
+    }
 }
