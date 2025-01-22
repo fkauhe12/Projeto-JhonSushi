@@ -107,7 +107,6 @@ nav {
     margin-top: 1%;
     overflow-x: auto; /* Permite rolagem horizontal */
     white-space: nowrap; /* Impede a quebra de linha dos itens */
-    border: 1px solid black;
 }
 
 nav ul {
