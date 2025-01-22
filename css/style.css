@@ -4,7 +4,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: 0;
+    box-sizing: border-box; /* Corrigir box-sizing */
 }
 
 /* Definindo a fonte padrão para o corpo da página */
@@ -59,6 +59,7 @@ header {
 }
 
 .text span {
+    font-family: "Merienda", cursive;
     color: red;
     text-shadow: 0px 0px 10px red;
 }
@@ -103,30 +104,30 @@ button.admin i {
 nav {
     width: 100%;
     height: 100%;
-    margin-top: 1%;
+    margin-top: 2%;
     overflow-x: auto; /* Permite rolagem horizontal */
     white-space: nowrap; /* Impede a quebra de linha dos itens */
 }
 
 nav ul {
     display: inline-flex; /* Alinha os itens em linha */
-    justify-content: space-between;
+    align-items: center /* Alinha os itens verticalmente */;
     height: 100%;
 }
 
 nav ul li {
     list-style: none;
     margin: auto;
+    padding-left: 2%;
 }
 
 .link-nav {
-    font-size: 3vw;
+    font-size: 4vw;
     font-weight: bolder;
     font-family: Arial, Helvetica, sans-serif;
     color: black;
     cursor: pointer;
     text-decoration: none;
-    padding: 10px; /* Adiciona espaçamento ao redor dos links */
 }
 
 /* Título da página Niguiri */
@@ -137,7 +138,7 @@ nav ul li {
     margin-top: 3%;
     font-family: "Agbalumo", serif;
     font-size: 7vw;
-    text-shadow: 0px 0px 5px red;
+    text-shadow: 0px 0px 3px red;
 }
 
 /* Estilo para os cards de produtos */
@@ -233,6 +234,13 @@ footer {
     color: white;
     width: 100%;
     height: 20vw;
+    margin-top: 6%;
+}
+
+.logo1 span {
+    font-family: "Merienda", cursive;
+    color: red;
+    text-shadow: 0px 0px 3px red;
 }
 
 #link-footer ul li {
@@ -256,7 +264,6 @@ footer {
     color: white;
     font-size: 4vw;
     padding: 1vw;
-    transition: 0.6s;
 }
 
 .link-what {
@@ -361,7 +368,7 @@ footer {
 
     footer {
         height: 100px;
-        margin-top: 0;
+        margin-top: 2%;
     }
 
     .link-what, .link-face, .link-insta {
