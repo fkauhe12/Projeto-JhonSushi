@@ -508,26 +508,29 @@
         text-shadow: 0px 0px 3px red;
     }
 
-    /* Estilo para os cards de produtos */
-    .container {
+       /* Estilo para os cards de produtos */
+       .container {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
+        gap: 50px;
+        margin-top: 2%;
     }
 
     .card {
         width: 320px;
+        height: 100%;
         border: 1px solid #ddd;
         border-radius: 8px;
         overflow: hidden;
-        margin-top: 4%;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
-        padding: 2%;
+        padding: 1%;
     }
 
     .card img {
         width: 100%;
         height: auto;
+        border-radius: 2%;
     }
 
     .descricao {
@@ -538,58 +541,53 @@
         margin: 0;
         font-size: 20px;
         font-weight: bold;
-        color: #bb0b0b;
+        text-align: center;
     }
 
     .sub p {
         font-size: 15px;
-        color: #bb0b0b;
         margin-top: 2%;
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+        text-align: center;
     }
 
     .valorunid p {
         font-size: 16px;
         color: #bb0b0b;
         font-weight: bold;
-        margin-top: 10px;
+        margin-top: 3%;
+        text-align: center;
     }
 
     .contain {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
+        margin-top: 3%;
     }
 
     .preco p {
         font-size: 20px;
         font-weight: bold;
         color: green;
-        margin-top: 3px;
-        justify-items: auto;
-        padding: 0;
-        margin-top: 14px;
     }
 
     .add button {
         background-color: green;
         color: white;
         border: none;
-        padding: 7px 7px;
-        cursor: pointer;
-        border-radius: 50px;
-        width: auto;
-        height: auto;
-        margin-top: 9px;
-    }
-
-    .add button:hover {
-        color: black;
-        background-color: red;
+        padding: 25%;
+        border-radius: 100%;
+        transition: 0.6s;
     }
 
     .add button i {
         font-size: 25px;
     }
+
 
     /* Rodapé */
     footer {
