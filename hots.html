@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jhon Sushi">
+    <title>Jhon Sushi</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Cabeçalho --> 
+    <header> 
+        <!-- Logo -->
+        <div class="logo">
+            <img src="img/jhonsushi.jpeg" alt="Logo do Jhon Sushi">
+        </div>
+        <!-- Título -->
+        <div class="text">
+            <h1> Jhon<span>Sushi</span> </h1>
+        </div>
+        <!-- Botão admin -->
+        <div class="admin-button">
+            <button class="admin" onclick="mostrarPainelAdmin()">
+                <i class="fas fa-user-circle"></i> 
+            </button>
+        </div>
+    </header>
+    <!-- Divisão cabeçalho -->
+    <div class="linha"></div>
+    <!-- Menu de navegação -->
+    <nav>
+        <ul>
+            <li><a href="niguiri.html" class="link-nav">Niguiri</a></li>
+            <li><a href="hossomaki.html" class="link-nav">Hossomaki</a></li>
+            <li><a href="uramakis.html" class="link-nav">Uramakis</a></li>
+            <li><a href="hots.html" class="link-nav">Hots</a></li>
+            <li><a href="temaki.html" class="link-nav">Temakis</a></li>
+            <li><a href="combinado.html" class="link-nav">Combos</a></li>
+            <li><a href="combinado.html" class="link-nav">Especiais</a></li>
+            <li><a href="sacola.html" class="link-nav"><i class="fa-solid fa-bag-shopping"></i></a></li>
+        </ul>
+    </nav>
+    <!-- Título Niguiri -->
+    <div class="niguiri">
+        <h2>Hots</h2>
+    </div>
+    <!-- Contêiner dos Cards -->
+    <div class="container">
+        <!-- Card 1 -->
+        <div class="card">
+            <img src="https://tse4.mm.bing.net/th?id=OIP.YBXRsYsjP1G0fTXUuRnQuAHaE8&pid=Api&P=0&h=180" alt="Hot salmão">
+            <div class="descricao">
+                <div class="titulo-card">
+                    <h2>Hot Salmão 05 unidades</h2>
+                </div>
+                <div class="sub">
+                    <p>Feito de Arroz, Salmão, Cream chease, Empanados na farinha Panko e fritos.</p>
+                </div>
+                <div class="contain">
+                    <div class="preco">
+                        <p>Valor ítem R$ 19,00</p>
+                    </div>
+                    <div class="add">
+                        <button onclick="adicionar()">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="card">
+            <img src="https://d3bzelmk6acfws.cloudfront.net/621/conversions/0-48_Easy-Resize.com-webp.webp" alt="Hot Camarão"> 
+            <div class="descricao">
+                <div class="titulo-card">
+                    <h2>Hot Camarão 05 unidades</h2>
+                </div>
+                <div class="sub">
+                    <p>Feito de Arroz, Camarão, cream chease, Empanados na farinha Panko e fritos.</p>
+                </div>
+                <div class="contain">
+                    <div class="preco">
+                        <p>Valor ítem R$ 17,00</p>
+                    </div>
+                    <div class="add">
+                        <button onclick="adicionar()">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="card">
+            <img src="https://i.pinimg.com/736x/42/91/82/429182f99e8e817b9db3f11171476b1b--catalog-oriental.jpg" alt="Hot Kani">
+            <div class="descricao">
+                <div class="titulo-card">
+                    <h2>Hot Kani 05 Unidades</h2>
+                </div>
+                <div class="sub">
+                    <p>Feito de Arroz, Kani(contém carangueijo) e Cream chease, Empanados na farinha Panko e fritos.</p>
+                </div>
+                <div class="contain">
+                    <div class="preco">
+                        <p>Valor ítem R$ 10,00</p>
+                    </div>
+                    <div class="add">
+                        <button onclick="adicionar()">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="card">
+            <img src="https://www.sabornamesa.com.br/media/k2/items/cache/f269038fa4534045b59925e7d5e023e1_XL.jpg" alt="Hot Atum">
+            <div class="descricao">
+                <div class="titulo-card">
+                    <h2>Hot Atum 05 unidades</h2>
+                </div>
+                <div class="sub">
+                    <p>Feito de Arroz, Atum e Cream chease, Empanados na farinha Panko e fritos.</p>
+                </div>
+                <div class="contain">
+                    <div class="preco">
+                        <p>Valor ítem R$ 0,00</p>
+                    </div>
+                    <div class="add">
+                        <button onclick="adicionar()">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Card 5 -->
+        <div class="card">
+            <img src="https://i.pinimg.com/736x/e2/00/d9/e200d9df9cff0da6cd403cfcc6806d9a.jpg" alt="Hot Salmão e Camarão">
+            <div class="descricao">
+                <div class="titulo-card">
+                    <h2>Hot Salmão e Camarão 05 unidades</h2>
+                </div>
+                <div class="sub">
+                    <p>Feito de Arroz, Salmão, Camarão e Cream chease, Empanados na farinha Panko e fritos.</p>
+                </div>
+                <div class="contain">
+                    <div class="preco">
+                        <p>Valor ítem R$ 0,00</p>
+                    </div>
+                    <div class="add">
+                        <button onclick="adicionar()">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Card 6 -->
+        <div class="card">
+            <img src="https://s3-sa-east-1.amazonaws.com/deliveryon-uploads/products/sujirusushi/317_5dba2136d9f71.jpeg" alt="Hot Skin">
+            <div class="descricao">
+                <div class="titulo-card">
+                    <h2>Hot Skin 05 unidades</h2>
+                </div>
+                <div class="sub">
+                    <p>Feitos de Arroz, Cream chease e Pele frita de Salmão, Empanados na farinha Panko e fritos.</p>
+                </div>
+                <div class="contain">
+                    <div class="preco">
+                        <p>Valor ítem R$ 0,00</p>
+                    </div>
+                    <div class="add">
+                        <button onclick="adicionar()">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fim do contêiner -->
+    <!-- Rodapé -->
+    <footer>
+        <div class="logo1">Jhon<span>Sushi</span></div>
+        <!-- Anúncio -->
+        <div class="anuncio">
+            <h6>Aceitamos encomendas para eventos!</h6>
+        </div>
+        <!-- Mídias -->
+        <div id="midia">
+            <ul>
+                <li><a href="https://www.whatsapp.com/" target="_blank" class="link-what"><i class="fa-brands fa-whatsapp"></i></a></li>
+                <li><a href="https://www.facebook.com/" target="_blank" class="link-face"><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a href="https://www.instagram.com/" target="_blank" class="link-insta"><i class="fa-brands fa-instagram"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
