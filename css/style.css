@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Merienda:wght@300..900&display=swap');
 
 /* Estilos específicos para dispositivos maiores que 768px (computadores) */
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     /* Resetando margens e paddings */
     * {
         margin: 0;
@@ -114,7 +114,7 @@
     .link-nav {
         font-size: 2vw;
         color: black;
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: "Agbalumo", serif;
         cursor: pointer;
         font-weight: bolder;
         user-select: none;
@@ -135,7 +135,7 @@
         margin-top: 1%;
         font-family: "Agbalumo", serif;
         font-size: 5vw;
-        text-shadow: 0px 0px 3px red;
+        text-shadow: 9px 5px 4px black;
     }
 
     /* Estilo para os cards de produtos */
@@ -169,14 +169,15 @@
 
     .titulo-card h2 {
         margin: 0;
-        font-size: 20px;
+        font-size: 2vw;
         font-weight: bold;
         text-align: center;
+
     }
 
     .sub p {
         font-size: 15px;
-        margin-top: 2%;
+        margin-top: 5%;
         border: 1px solid black;
         border-radius: 10px;
         padding: 5px;
@@ -184,19 +185,11 @@
         text-align: center;
     }
 
-    .valorunid p {
-        font-size: 16px;
-        color: #bb0b0b;
-        font-weight: bold;
-        margin-top: 3%;
-        text-align: center;
-    }
-
     .contain {
         display: flex;
         justify-content: space-around;
         align-items: center;
-        margin-top: 3%;
+        margin-top: 6%;
     }
 
     .preco p {
@@ -295,7 +288,7 @@
 }
 
 /* Estilos específicos para tablets (largura entre 768px e 1024px) */
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 767px) and (max-width: 1023px) {
     body {
         min-height: 100vh;
         display: flex;
@@ -491,7 +484,7 @@
     .link-nav {
         font-size: 5vw;
         font-weight: bolder;
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: "Agbalumo", serif;
         color: black;
         cursor: pointer;
         text-decoration: none;
@@ -505,7 +498,7 @@
         margin-top: 3%;
         font-family: "Agbalumo", serif;
         font-size: 7vw;
-        text-shadow: 0px 0px 3px red;
+        text-shadow: 3px 5px black;
     }
 
        /* Estilo para os cards de produtos */
@@ -546,7 +539,7 @@
 
     .sub p {
         font-size: 15px;
-        margin-top: 2%;
+        margin-top: 5%;
         border: 1px solid black;
         border-radius: 10px;
         padding: 5px;
@@ -554,25 +547,19 @@
         text-align: center;
     }
 
-    .valorunid p {
-        font-size: 16px;
-        color: #bb0b0b;
-        font-weight: bold;
-        margin-top: 3%;
-        text-align: center;
-    }
-
     .contain {
         display: flex;
         justify-content: space-around;
         align-items: center;
-        margin-top: 3%;
+        margin-top: 5%;
+
     }
 
     .preco p {
         font-size: 20px;
         font-weight: bold;
         color: green;
+        
     }
 
     .add button {
@@ -582,6 +569,7 @@
         padding: 25%;
         border-radius: 100%;
         transition: 0.6s;
+        
     }
 
     .add button i {
@@ -597,7 +585,7 @@
         background-color: black;
         color: white;
         width: 100%;
-        height: 20vw;
+        height: 25vw;
         margin-top: 6%;
     }
 
