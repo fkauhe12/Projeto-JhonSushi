@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jhon Sushi">
+    <title>Jhon Sushi</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Cabeçalho --> 
+    <header> 
+        <!-- Logo -->
+        <div class="logo">
+            <img src="img/jhonsushi.jpeg" alt="Logo do Jhon Sushi">
+        </div>
+        <!-- Título -->
+        <div class="text">
+            <h1> Jhon<span>Sushi</span> </h1>
+        </div>
+        <!-- Botão admin -->
+        <div class="admin-button">
+            <button class="admin" onclick="mostrarPainelAdmin()">
+                <i class="fas fa-user-circle"></i> 
+            </button>
+        </div>
+    </header>
+    <!-- Divisão cabeçalho -->
+    <div class="linha"></div>
+    <!-- Menu de navegação -->
+    <nav>
+        <ul>
+            <li><a href="index.html" class="link-nav">Niguiri</a></li>
+            <li><a href="hossomaki.html" class="link-nav">Hossomaki</a></li>
+            <li><a href="uramakis.html" class="link-nav">Uramakis</a></li>
+            <li><a href="hots.html" class="link-nav">Hots</a></li>
+            <li><a href="temaki.html" class="link-nav">Temakis</a></li>
+            <li><a href="combinado.html" class="link-nav">Combos</a></li>
+            <li><a href="combinado.html" class="link-nav">Especiais</a></li>
+            <li><a href="sacola.html" class="link-nav"><i class="fa-solid fa-bag-shopping"></i></a></li>
+        </ul>
+    </nav>
+    <!-- Título Niguiri -->
+    <div class="niguiri">
+        <h2>Temakis</h2>
+    </div>
+    <!-- Contêiner dos Cards -->
+    <div class="container">
+        <!-- Card 1 -->
+        <div class="card">
+            <img src="https://joysushi.com.br/wp-content/uploads/2020/07/172-Uramaki-Salm%C3%A3o-com-Cream-Cheese-1170x780.jpg" alt="Uramaki salmão">
+            <div class="descricao">
+                <div class="titulo-card">
+                    <h2>Uramaki Salmão 05 unidades</h2>
+                </div>
+                <div class="sub">
+                    <p>Feitos de Arroz, Salmão, Cream chease.</p>
+                </div>
+                <div class="contain">
+                    <div class="preco">
+                        <p>Valor ítem R$ 19,00</p>
+                    </div>
+                    <div class="add">
+                        <button onclick="adicionar()">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="card">
+            <img src="https://i.pinimg.com/originals/d4/1b/ac/d41bace5d8c450aa7dbb6b73c868ad54.png" alt="Uramaki Camarão"> 
+            <div class="descricao">
+                <div class="titulo-card">
+                    <h2>Uramaki Camarão 05 unidades</h2>
+                </div>
+                <div class="sub">
+                    <p>Feitos de Arroz, Camarão, cream chease</p>
+                </div>
+                <div class="contain">
+                    <div class="preco">
+                        <p>Valor ítem R$ 17,00</p>
+                    </div>
+                    <div class="add">
+                        <button onclick="adicionar()">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="card">
+            <img src="https://image.freepik.com/free-photo/japonese-food-uramaki-kani-philadelphia_317111-445.jpg" alt="Uramaki Kani">
+            <div class="descricao">
+                <div class="titulo-card">
+                    <h2>Uramaki Kani 05 Unidades</h2>
+                </div>
+                <div class="sub">
+                    <p>Feitos de Arroz, Kani(contém carangueijo) e Cream chease.</p>
+                </div>
+                <div class="contain">
+                    <div class="preco">
+                        <p>Valor ítem R$ 10,00</p>
+                    </div>
+                    <div class="add">
+                        <button onclick="adicionar()">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="card">
+            <img src="https://cdn.tasteatlas.com/images/dishes/0e1987353e3e4f218d3169c71e6d7591.jpg?mw=2000" alt="Uramaki Atum">
+            <div class="descricao">
+                <div class="titulo-card">
+                    <h2>Uramaki Atum 05 unidades</h2>
+                </div>
+                <div class="sub">
+                    <p>Feitos de Arroz, Atum e Cream chease.</p>
+                </div>
+                <div class="contain">
+                    <div class="preco">
+                        <p>Valor ítem R$ 0,00</p>
+                    </div>
+                    <div class="add">
+                        <button onclick="adicionar()">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Card 5 -->
+        <div class="card">
+            <img src="https://www.sabornamesa.com.br/media/k2/items/cache/100ee607e4feb32847876130800bcc02_L.jpg" alt="Uramaki Salmão e Camarão">
+            <div class="descricao">
+                <div class="titulo-card">
+                    <h2>Uramaki Salmão e Camarão 05 unidades</h2>
+                </div>
+                <div class="sub">
+                    <p>Feitos de Arroz, Salmão, Camarão e Cream chease.</p>
+                </div>
+                <div class="contain">
+                    <div class="preco">
+                        <p>Valor ítem R$ 0,00</p>
+                    </div>
+                    <div class="add">
+                        <button onclick="adicionar()">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Card 6 -->
+        <div class="card">
+            <img src="https://img.cybercook.com.br/imagens/receitas/984/uramaki-skin.jpg" alt="Uramaki Skin">
+            <div class="descricao">
+                <div class="titulo-card">
+                    <h2>Uramaki Skin 05 unidades</h2>
+                </div>
+                <div class="sub">
+                    <p> Feitos de Arroz, Cream chease e Pele frita de Salmão</p>
+                </div>
+                <div class="contain">
+                    <div class="preco">
+                        <p>Valor ítem R$ 0,00</p>
+                    </div>
+                    <div class="add">
+                        <button onclick="adicionar()">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Card 7 -->
+        <div class="card">
+            <img src="https://www.tikirestaurant.es/wp-content/uploads/2013/12/SUSHI_URAMAKI_California_Roll.jpg" alt="Uramaki Califórnia">
+            <div class="descricao">
+                <div class="titulo-card">
+                    <h2>Uramaki Califórnia 05 unidades</h2>
+                </div>
+                <div class="sub">
+                    <p>Feitos de Arroz, Manga, Pepino e Alface.Ótima opção para veganos.</p>
+                </div>
+                <div class="contain">
+                    <div class="preco">
+                        <p>Valor ítem R$ 0,00</p>
+                    </div>
+                    <div class="add">
+                        <button onclick="adicionar()">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fim do contêiner -->
+    <!-- Rodapé -->
+    <footer>
+        <div class="logo1">Jhon<span>Sushi</span></div>
+        <!-- Anúncio -->
+        <div class="anuncio">
+            <h6>Aceitamos encomendas para eventos!</h6>
+        </div>
+        <!-- Mídias -->
+        <div id="midia">
+            <ul>
+                <li><a href="https://www.whatsapp.com/" target="_blank" class="link-what"><i class="fa-brands fa-whatsapp"></i></a></li>
+                <li><a href="https://www.facebook.com/" target="_blank" class="link-face"><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a href="https://www.instagram.com/" target="_blank" class="link-insta"><i class="fa-brands fa-instagram"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
