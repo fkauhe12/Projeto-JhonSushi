@@ -125,6 +125,7 @@
     .link-nav:hover {
         font-weight: bolder;
         color: red;
+
     }
 
     /* Título da página Niguiri */
@@ -132,9 +133,8 @@
         display: flex;
         justify-content: center;
         color: red;
-        margin-top: 1%;
         font-family: "Agbalumo", serif;
-        font-size: 5vw;
+        font-size: 7vw;
         text-shadow: 9px 5px 4px black;
     }
 
@@ -151,24 +151,28 @@
         width: 320px;
         height: 100%;
         border: 1px solid #ddd;
-        border-radius: 8px;
+        border-radius: 10px;
         overflow: hidden;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
-        padding: 1%;
+
     }
 
     .card img {
         width: 100%;
         height: auto;
-        border-radius: 2%;
+        border-radius: 10px;
+        padding: 1%;
     }
 
     .descricao {
-        padding: 15px;
+        padding: 2%;
+        height: 210px;
+        border-radius: 10px;
     }
 
     .titulo-card h2 {
-        margin: 0;
+        display: flex;
+        align-items: center;
         font-size: 2vw;
         font-weight: bold;
         text-align: center;
@@ -176,6 +180,8 @@
     }
 
     .sub p {
+        display: flex;
+        height: 4vw;
         font-size: 15px;
         margin-top: 5%;
         border: 1px solid black;
@@ -183,6 +189,7 @@
         padding: 5px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
         text-align: center;
+
     }
 
     .contain {
@@ -190,12 +197,19 @@
         justify-content: space-around;
         align-items: center;
         margin-top: 6%;
+
     }
 
     .preco p {
         font-size: 20px;
         font-weight: bold;
         color: green;
+    }
+
+    .add {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .add button {
@@ -261,30 +275,25 @@
         color: white;
         font-size: 4vw;
         padding: 1vw;
-        transition: 0.6s;
+        transition: 0.10s;
     }
 
-    .link-what:hover {
+    .link-what i:hover {
         color: green;
-        font-size: 5vw;
+        scale: 1.1;
     }
 
-    .link-face:hover {
+    .link-face i:hover {
         color: blue;
-        font-size: 5vw;
+        scale: 1.1;
     }
 
-    .link-twit:hover {
-        color: purple;
-        font-size: 5vw;
-    }
-
-    .link-insta:hover {
+    .link-insta i:hover {
         color: transparent;
         background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
         background-clip: text;
-        font-size: 5vw;
-    }
+        scale: 1.1;
+    }   
 }
 
 /* Estilos específicos para tablets (largura entre 768px e 1024px) */
@@ -495,10 +504,10 @@
         display: flex;
         justify-content: center;
         color: red;
-        margin-top: 3%;
+        margin: 2% auto 3% auto;
         font-family: "Agbalumo", serif;
-        font-size: 7vw;
-        text-shadow: 3px 5px black;
+        font-size: 11vw;
+        text-shadow: 3px 3px black;
     }
 
        /* Estilo para os cards de produtos */
