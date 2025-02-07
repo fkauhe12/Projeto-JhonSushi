@@ -7,8 +7,8 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box; /* Corrigir box-sizing */
-        user-select: none; /* Desativa a seleção de texto */
-    }
+            user-select: none; /* Desativa a seleção de texto */
+        }
 
     /* Definindo a fonte padrão para o corpo da página */
     body {
@@ -43,8 +43,10 @@
     }
 
     }
-
-    .carrinho {
+    
+    /* Estilos específicos para dispositivos maiores que 768px (computadores) */
+    @media (min-width: 1024px) {
+        .carrinho {
         position: fixed;
         top: 0;
         right: 0;
