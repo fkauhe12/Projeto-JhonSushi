@@ -38,9 +38,26 @@
             <li><a href="temaki.html" class="link-nav">Temakis</a></li>
             <li><a href="combinado.html" class="link-nav">Combos</a></li>
             <li><a href="combinado.html" class="link-nav">Especiais</a></li>
-            <li><a href="sacola.html" class="link-nav"><i class="fa-solid fa-bag-shopping"></i></a></li>
+            <li><a href="javascript:void(0)" class="link-nav" onclick="expandirSacola()">
+                <i class="fa-solid fa-bag-shopping"></i> 
+                <span id="qtd-carrinho">0</span> itens
+            </a></li>
         </ul>
     </nav>
+
+    <!-- Carrinho Expandido -->
+    <div id="sacola" class="sacola" style="display: none;">
+        <button id="minimizar" class="minimizar" onclick="minimizarSacola()">
+            <i class="fa-light fa-x"></i>
+        </button>
+        <h3>Carrinho</h3>
+        <div id="itens-carrinho"></div>
+        <div id="total-carrinho">
+            <p>Total: R$ 0,00</p>
+        </div>
+        <button onclick="finalizarCompra()">Finalizar Compra</button>
+    </div>
+
     <!-- Título Niguiri -->
     <div class="niguiri">
         Uramakis
@@ -62,7 +79,7 @@
                         <p>Valor ítem R$ 19,00</p>
                     </div>
                     <div class="add">
-                        <button onclick="adicionar()">
+                        <button onclick="adicionar('Uramaki Salmão 05 unidades', 19.00)">
                             <i class="fas fa-plus"></i>
                         </button>
                     </div>
@@ -84,7 +101,7 @@
                         <p>Valor ítem R$ 17,00</p>
                     </div>
                     <div class="add">
-                        <button onclick="adicionar()">
+                        <button onclick="adicionar('Uramaki Camarão 05 unidades', 17.00)">
                             <i class="fas fa-plus"></i>
                         </button>
                     </div>
@@ -106,7 +123,7 @@
                         <p>Valor ítem R$ 10,00</p>
                     </div>
                     <div class="add">
-                        <button onclick="adicionar()">
+                        <button onclick="adicionar('Uramaki Kani 05 Unidades', 10.00)">
                             <i class="fas fa-plus"></i>
                         </button>
                     </div>
@@ -128,7 +145,7 @@
                         <p>Valor ítem R$ 0,00</p>
                     </div>
                     <div class="add">
-                        <button onclick="adicionar()">
+                        <button onclick="adicionar('Uramaki Atum 05 unidades', 0.00)">
                             <i class="fas fa-plus"></i>
                         </button>
                     </div>
@@ -150,7 +167,7 @@
                         <p>Valor ítem R$ 0,00</p>
                     </div>
                     <div class="add">
-                        <button onclick="adicionar()">
+                        <button onclick="adicionar('Uramaki Salmão e Camarão 05 unidades', 0.00)">
                             <i class="fas fa-plus"></i>
                         </button>
                     </div>
@@ -172,7 +189,7 @@
                         <p>Valor ítem R$ 0,00</p>
                     </div>
                     <div class="add">
-                        <button onclick="adicionar()">
+                        <button onclick="adicionar('Uramaki Skin 05 unidades', 0.00)">
                             <i class="fas fa-plus"></i>
                         </button>
                     </div>
@@ -194,7 +211,7 @@
                         <p>Valor ítem R$ 0,00</p>
                     </div>
                     <div class="add">
-                        <button onclick="adicionar()">
+                        <button onclick="adicionar('Uramaki Califórnia 05 unidades', 0.00)">
                             <i class="fas fa-plus"></i>
                         </button>
                     </div>
