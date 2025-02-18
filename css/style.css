@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Merienda:wght@300..900&display=swap');
 
 /* Estilos específicos para dispositivos maiores que 768px (computadores) */
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
     /* Resetando margens e paddings */
     * {
         margin: 0;
