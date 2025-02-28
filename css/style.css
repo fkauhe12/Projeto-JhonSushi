@@ -7,8 +7,8 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box; /* Corrigir box-sizing */
-            user-select: none; /* Desativa a seleção de texto */
-        }
+        user-select: none; /* Desativa a seleção de texto */
+    }
 
     /* Definindo a fonte padrão para o corpo da página */
     body {
@@ -125,7 +125,11 @@
     .link-nav:hover {
         font-weight: bolder;
         color: red;
+    }
 
+    .link-nav.active {
+        font-weight: bold; /* Adiciona negrito à página atual */
+        color: red; /* Adiciona cor vermelha à página atual */
     }
 
     /* Título da página Niguiri */
@@ -154,7 +158,6 @@
         border-radius: 10px;
         overflow: hidden;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
-
     }
 
     .card img {
@@ -176,7 +179,6 @@
         font-size: 2vw;
         font-weight: bold;
         text-align: center;
-
     }
 
     .sub p {
@@ -189,7 +191,6 @@
         padding: 5px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
         text-align: center;
-
     }
 
     .contain {
@@ -197,7 +198,6 @@
         justify-content: space-around;
         align-items: center;
         margin-top: 6%;
-
     }
 
     .preco p {
@@ -293,7 +293,7 @@
         background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
         background-clip: text;
         scale: 1.1;
-    }   
+    }
 
     .sacola {
         display: none; /* Inicialmente a sacola está escondida */
@@ -317,8 +317,8 @@
 
     .sacola th, .sacola td {
         border: 1px solid #ddd;
-        padding: 8px;
-        text-align: left;
+        padding: 10px;
+        text-align: center;
     }
 
     .sacola th {
@@ -338,22 +338,6 @@
 
     .item-carrinho span {
         flex: 1;
-    }
-
-    .item-actions {
-        text-align: right;
-    }
-
-    .item-actions button {
-        background-color: #f44336;
-        color: white;
-        border: none;
-        padding: 5px 10px;
-        cursor: pointer;
-    }
-
-    .item-actions button:hover {
-        background-color: #d32f2f;
     }
 
     .preco-item {
@@ -443,7 +427,7 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box; /* Corrigir box-sizing */
-        user-select: none; /* Desativa a seleção de texto */ 
+        user-select: none; /* Desativa a seleção de texto */
     }
 
     /* Definindo a fonte padrão para o corpo da página */
@@ -568,6 +552,11 @@
         text-decoration: none;
     }
 
+    .link-nav.active {
+        font-weight: bold; /* Adiciona negrito à página atual */
+        color: red; /* Adiciona cor vermelha à página atual */
+    }
+
     /* Título da página Niguiri */
     .niguiri {
         display: flex;
@@ -581,11 +570,11 @@
 
     /* Estilo para os cards de produtos */
     .container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 50px;
-    margin-top: 2%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 50px;
+        margin-top: 2%;
     }
 
     .card {
@@ -595,7 +584,6 @@
         border-radius: 10px;
         overflow: hidden;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
-
     }
 
     .card img {
@@ -634,14 +622,12 @@
         justify-content: space-around;
         align-items: center;
         margin-top: 6%;
-
     }
 
     .preco p {
         font-size: 20px;
         font-weight: bold;
         color: green;
-        
     }
 
     .add {
@@ -662,7 +648,6 @@
     .add button i {
         font-size: 25px;
     }
-
 
     /* Rodapé */
     footer {
@@ -741,12 +726,13 @@
         width: 100%;
         border-collapse: collapse;
         margin-top: 20px; /* Adiciona margin-top à tabela */
+        
     }
 
     .sacola th, .sacola td {
         border: 1px solid #ddd;
-        padding: 8px;
-        text-align: left;
+        padding: 10px;
+        text-align: center;
     }
 
     .sacola th {
@@ -766,22 +752,6 @@
 
     .item-carrinho span {
         flex: 1;
-    }
-
-    .item-actions {
-        text-align: right;
-    }
-
-    .item-actions button {
-        background-color: #f44336;
-        color: white;
-        border: none;
-        padding: 5px 10px;
-        cursor: pointer;
-    }
-
-    .item-actions button:hover {
-        background-color: #d32f2f;
     }
 
     .preco-item {
@@ -808,7 +778,9 @@ h3 {
     width: 30px;
     height: 30px;
     cursor: pointer;
-
+    position: absolute; /* Adiciona posição absoluta */
+    top: 10px; /* Ajusta a posição do topo */
+    right: 10px; /* Ajusta a posição à direita */
 }
 
 .carrinho {
@@ -822,16 +794,6 @@ h3 {
     display: none;
     height: 100%;
     overflow-y: auto;
-}
-
-.botao-fechar {
-    background: none;
-    border: none;
-    font-size: 24px;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    cursor: pointer;
 }
 
 .item-carrinho {
@@ -866,6 +828,7 @@ h3 {
     font-size: 18px;
     cursor: pointer;
 }
+
 /* Estilos para a sacola */
 .sacola {
     display: none; /* Inicialmente a sacola está escondida */
@@ -889,11 +852,13 @@ h3 {
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
     cursor: pointer;
     border-radius: 5px;
+    display: block; /* Adiciona display block */
+    margin-left: auto; /* Centraliza horizontalmente */
+    margin-right: auto; /* Centraliza horizontalmente */
+    margin-top: 20px;
 }
 
 .item-carrinho {
@@ -903,10 +868,8 @@ h3 {
     margin-bottom: 10px;
     padding: 10px;
     border-bottom: 1px solid #ccc;
-    color:green;
-    
+    color: green;
 }
-
 
 #total-carrinho {
     font-size: 20px;
@@ -916,22 +879,6 @@ h3 {
 
 .item-carrinho span {
     flex: 1;
-}
-
-.item-actions {
-    text-align: right;
-}
-
-.item-actions button {
-    background-color: #f44336;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-}
-
-.item-actions button:hover {
-    background-color: #d32f2f;
 }
 
 .preco-item {
