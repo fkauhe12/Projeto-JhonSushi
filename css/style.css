@@ -294,6 +294,75 @@
         background-clip: text;
         scale: 1.1;
     }   
+
+    .sacola {
+        display: none; /* Inicialmente a sacola está escondida */
+        position: fixed; /* Usamos fixed para fixar a sacola na tela */
+        top: 80px; /* Posiciona a sacola abaixo do cabeçalho e do botão da sacola */
+        right: 10px; /* Posiciona a sacola na parte direita */
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 400px; /* Aumenta a largura da sacola */
+        max-height: 600px; /* Aumenta a altura máxima da sacola */
+        overflow-y: auto;
+        z-index: 999;
+    }
+
+    .sacola table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px; /* Adiciona margin-top à tabela */
+    }
+
+    .sacola th, .sacola td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    .sacola th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+    }
+
+    .item-carrinho {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+        color: green;
+    }
+
+    .item-carrinho span {
+        flex: 1;
+    }
+
+    .item-actions {
+        text-align: right;
+    }
+
+    .item-actions button {
+        background-color: #f44336;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+    }
+
+    .item-actions button:hover {
+        background-color: #d32f2f;
+    }
+
+    .preco-item {
+        margin-top: 5px;
+    }
+
+    #itens-carrinho p {
+        margin-top: 20px; /* Adiciona margin-top à mensagem "Seu carrinho está vazio" */
+    }
 }
 
 /* Estilos específicos para tablets (largura entre 768px e 1024px) */
@@ -653,6 +722,93 @@
         background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
         background-clip: text;
     }
+
+    .sacola {
+        display: none; /* Inicialmente a sacola está escondida */
+        position: fixed; /* Usamos fixed para fixar a sacola na tela */
+        top: 80px; /* Posiciona a sacola abaixo do cabeçalho e do botão da sacola */
+        right: 10px; /* Posiciona a sacola na parte direita */
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 400px; /* Aumenta a largura da sacola */
+        max-height: 600px; /* Aumenta a altura máxima da sacola */
+        overflow-y: auto;
+        z-index: 999;
+    }
+
+    .sacola table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px; /* Adiciona margin-top à tabela */
+    }
+
+    .sacola th, .sacola td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    .sacola th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+    }
+
+    .item-carrinho {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+        color: green;
+    }
+
+    .item-carrinho span {
+        flex: 1;
+    }
+
+    .item-actions {
+        text-align: right;
+    }
+
+    .item-actions button {
+        background-color: #f44336;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+    }
+
+    .item-actions button:hover {
+        background-color: #d32f2f;
+    }
+
+    .preco-item {
+        margin-top: 5px;
+    }
+
+    #itens-carrinho p {
+        margin-top: 20px; /* Adiciona margin-top à mensagem "Seu carrinho está vazio" */
+    }
+}
+
+h3 {
+    font-family: 'Libre Baskerville', serif;
+    color: black;
+    text-align: center;
+    margin-top: 5%;
+}
+
+.minimizar {
+    border-radius: 100%;
+    background-color: red;
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+
 }
 
 .carrinho {
@@ -715,14 +871,29 @@
     display: none; /* Inicialmente a sacola está escondida */
     position: fixed; /* Usamos fixed para fixar a sacola na tela */
     top: 80px; /* Posiciona a sacola abaixo do cabeçalho e do botão da sacola */
+    border-radius: 10px;
     right: 10px; /* Posiciona a sacola na parte direita */
     background-color: #fff;
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    max-height: 400px;
+    width: 400px; /* Aumenta a largura da sacola */
+    max-height: 600px; /* Aumenta a altura máxima da sacola */
     overflow-y: auto;
     z-index: 999;
+}
+
+.finalizar-compra {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 .item-carrinho {
@@ -733,6 +904,14 @@
     padding: 10px;
     border-bottom: 1px solid #ccc;
     color:green;
+    
+}
+
+
+#total-carrinho {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
 }
 
 .item-carrinho span {
@@ -757,4 +936,10 @@
 
 .preco-item {
     margin-top: 5px;
+}
+
+#itens-carrinho p {
+    font-weight: bolder;
+    margin-top: 2%;
+    padding: 2%;
 }
