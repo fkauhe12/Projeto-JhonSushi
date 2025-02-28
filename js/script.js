@@ -48,6 +48,9 @@ function adicionar(nomeItem, preco) {
 
     // Atualiza a exibição dos itens no carrinho
     exibirItensCarrinho();
+
+    // Redireciona para a sacola
+    expandirSacola(); // Adicionada esta linha para redirecionar para a sacola
 }
 
 // Função para calcular o total de itens no carrinho
