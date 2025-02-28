@@ -71,10 +71,10 @@ function exibirItensCarrinho() {
         tabela.innerHTML = `
             <thead>
                 <tr>
-                    <th>Nome</th>
-                    <th>Quantidade</th>
+                    <th>Produto</th>
+                    <th>Qtd.P</th>
                     <th>Valor</th>
-                    <th>Ação</th>
+                    <th>Excluir</th>
                 </tr>
             </thead>
             <tbody>
@@ -89,7 +89,7 @@ function exibirItensCarrinho() {
             linha.innerHTML = `
                 <td>${item.nome}</td>
                 <td>${item.quantidade}</td>
-                <td>R$ ${valorTotalItem.toFixed(2)}</td>
+                <td>${valorTotalItem.toFixed(2)}</td>
                 <td><button onclick="removerItem(${index})"><i class="fas fa-trash"></i></button></td>
             `;
             tbody.appendChild(linha);
@@ -145,8 +145,21 @@ function atualizarQtdCarrinho() {
     qtdCarrinho.textContent = calcularTotalItens();  // Atualiza a quantidade de itens no carrinho
 }
 
+// Função para definir a página atual como ativa na navegação
+function definirPaginaAtiva() {
+    const linksNav = document.querySelectorAll('.link-nav');
+    const paginaAtual = window.location.pathname.split('/').pop();
+
+    linksNav.forEach(link => {
+        if (link.getAttribute('href') === paginaAtual) {
+            link.classList.add('active');
+        }
+    });
+}
+
 // Quando a página for carregada, exibir os itens do carrinho
 window.onload = function() {
     exibirItensCarrinho();
     atualizarQtdCarrinho();  // Atualiza a quantidade de itens no carrinho logo ao carregar a página
+    definirPaginaAtiva();  // Define a página atual como ativa na navegação
 };
