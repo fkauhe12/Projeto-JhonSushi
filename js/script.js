@@ -14,7 +14,7 @@ function expandirSacola() {
     
     // Mostrar a sacola e ajustar o total de itens no botão
     sacola.style.display = 'block';
-    qtdCarrinho.textContent = carrinho.length;  // Atualiza o número de itens no carrinho
+    qtdCarrinho.textContent = calcularTotalItens();  // Atualiza o número total de itens no carrinho
     exibirItensCarrinho(); // Exibe os itens do carrinho na sacola
 }
 
@@ -39,15 +39,20 @@ function adicionar(nomeItem, preco) {
     // Exibe o alerta com o nome do produto e o preço
     alert(`Produto Adicionado: ${nomeItem}\nPreço: R$ ${preco.toFixed(2)}`);
 
-    // Atualiza a quantidade de itens no botão de carrinho
+    // Atualiza a quantidade total de itens no botão de carrinho
     const qtdCarrinho = document.getElementById('qtd-carrinho');
-    qtdCarrinho.textContent = carrinho.length;
+    qtdCarrinho.textContent = calcularTotalItens();
 
     // Salva as mudanças no carrinho e no total
     salvarCarrinho();
 
     // Atualiza a exibição dos itens no carrinho
     exibirItensCarrinho();
+}
+
+// Função para calcular o total de itens no carrinho
+function calcularTotalItens() {
+    return carrinho.reduce((total, item) => total + item.quantidade, 0);
 }
 
 // Função para exibir os itens do carrinho
@@ -58,16 +63,36 @@ function exibirItensCarrinho() {
     if (carrinho.length === 0) {
         itensCarrinhoDiv.innerHTML = '<p>Seu carrinho está vazio.</p>';
     } else {
-        // Exibe os itens do carrinho
+        // Cria a tabela
+        const tabela = document.createElement('table');
+        tabela.innerHTML = `
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Quantidade</th>
+                    <th>Valor</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        `;
+        const tbody = tabela.querySelector('tbody');
+
+        // Adiciona os itens do carrinho na tabela
         carrinho.forEach((item, index) => {
-            const itemDiv = document.createElement('div');
-            itemDiv.classList.add('item-carrinho');
-            itemDiv.innerHTML = `
-                <span>${item.nome} - R$ ${item.preco.toFixed(2)} | ${item.quantidade}x</span>
-                <button onclick="removerItem(${index})"><i class="fas fa-trash"></i></button>
+            const linha = document.createElement('tr');
+            const valorTotalItem = item.preco * item.quantidade;
+            linha.innerHTML = `
+                <td>${item.nome}</td>
+                <td>${item.quantidade}</td>
+                <td>R$ ${valorTotalItem.toFixed(2)}</td>
+                <td><button onclick="removerItem(${index})"><i class="fas fa-trash"></i></button></td>
             `;
-            itensCarrinhoDiv.appendChild(itemDiv);
+            tbody.appendChild(linha);
         });
+
+        itensCarrinhoDiv.appendChild(tabela);
     }
 
     // Atualiza o total
@@ -86,9 +111,9 @@ function removerItem(index) {
         totalCarrinho = 0;
     }
 
-    // Atualiza a quantidade de itens no botão de carrinho
+    // Atualiza a quantidade total de itens no botão de carrinho
     const qtdCarrinho = document.getElementById('qtd-carrinho');
-    qtdCarrinho.textContent = carrinho.length;
+    qtdCarrinho.textContent = calcularTotalItens();
 
     // Salva as mudanças no carrinho e no total
     salvarCarrinho();
@@ -114,7 +139,7 @@ function finalizarCompra() {
 // Função para atualizar a quantidade de itens no carrinho
 function atualizarQtdCarrinho() {
     const qtdCarrinho = document.getElementById('qtd-carrinho');
-    qtdCarrinho.textContent = carrinho.length;  // Atualiza a quantidade de itens no carrinho
+    qtdCarrinho.textContent = calcularTotalItens();  // Atualiza a quantidade de itens no carrinho
 }
 
 // Quando a página for carregada, exibir os itens do carrinho
