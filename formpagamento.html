@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jhon Sushi">
+    <title>Finalizar Compra - Jhon Sushi</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Cabeçalho --> 
+    <header> 
+        <!-- Logo -->
+        <div class="logo">
+            <img src="img/jhonsushi.jpeg" alt="Logo do Jhon Sushi">
+        </div>
+        <!-- Título -->
+        <div class="text">
+            <h1> Jhon<span>Sushi</span> </h1>
+        </div>
+        <!-- Botão admin -->
+        <div class="admin-button">
+            <button class="admin" onclick="mostrarPainelAdmin()">
+                <i class="fas fa-user-circle"></i> 
+            </button>
+        </div>
+    </header>
+    <!-- Divisão cabeçalho -->
+    <div class="linha"></div>
+    <!-- Menu de navegação -->
+    <nav>
+        <ul>
+            <li><a href="index.html" class="link-nav">Niguiri</a></li>
+            <li><a href="hossomaki.html" class="link-nav">Hossomaki</a></li>
+            <li><a href="uramakis.html" class="link-nav">Uramakis</a></li>
+            <li><a href="hots.html" class="link-nav">Hots</a></li>
+            <li><a href="temaki.html" class="link-nav">Temakis</a></li>
+            <li><a href="combinado.html" class="link-nav">Combos</a></li>
+            <li><a href="combinado.html" class="link-nav">Especiais</a></li>
+            <li><a href="javascript:void(0)" class="link-nav" onclick="expandirSacola()">
+                <i class="fa-solid fa-bag-shopping"></i> 
+                <span id="qtd-carrinho">0</span> itens
+            </a></li>
+        </ul>
+    </nav>
+
+    <!-- Carrinho Expandido -->
+    <div id="sacola" class="sacola" style="display: none;">
+        <button id="minimizar" class="minimizar" onclick="minimizarSacola()">
+            <i class="fa-light fa-x"></i>
+        </button>
+        <h3>Carrinho</h3>
+        <div id="itens-carrinho"></div>
+        <div id="total-carrinho">
+            <p>Total: R$ 0,00</p>
+        </div>
+        <button class="finalizar-compra" onclick="finalizarCompra()">Finalizar Compra</button>
+    </div>
+
+    <!-- Título Finalizar Compra -->
+    <div class="niguiri">
+        Finalizar Compra
+    </div>
+    
+    <!-- Tabela de Pedidos -->
+    <div class="container">
+        <h3>Seus Pedidos</h3>
+        <div id="itens-carrinho-finalizacao">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Quantidade</th>
+                        <th>Preço</th>
+                    </tr>
+                </thead>
+                <tbody id="tabela-pedidos">
+                    <!-- Itens do carrinho serão inseridos aqui -->
+                </tbody>
+            </table>
+        </div>
+        <div id="total-carrinho-finalizacao">
+            <p>Total: R$ 0,00</p>
+        </div>
+    </div>
+
+    <!-- Formulário de Dados do Cliente -->
+    <div class="container">
+        <h3>Dados do Cliente</h3>
+        <form id="form-finalizacao">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+            <div class="form-group">
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" name="telefone" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="cpf">CPF (opcional):</label>
+                <input type="text" id="cpf" name="cpf">
+            </div>
+            <div class="form-group">
+                <label>Opção de Entrega:</label>
+                <div>
+                    <input type="radio" id="entrega" name="opcao_entrega" value="entrega" required>
+                    <label for="entrega">Entrega</label>
+                </div>
+                <div>
+                    <input type="radio" id="retirada" name="opcao_entrega" value="retirada" required>
+                    <label for="retirada">Retirada</label>
+                </div>
+            </div>
+            <button type="submit" class="finalizar-compra">Confirmar Pedido</button>
+        </form>
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="logo1">Jhon<span>Sushi</span></div>
+        <!-- Anúncio -->
+        <div class="anuncio">
+            <h6>Aceitamos encomendas para eventos!</h6>
+        </div>
+        <!-- Mídias -->
+        <div id="midia">
+            <ul>
+                <li><a href="https://www.whatsapp.com/" target="_blank" class="link-what"><i class="fa-brands fa-whatsapp"></i></a></li>
+                <li><a href="https://www.facebook.com/" target="_blank" class="link-face"><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a href="https://www.instagram.com/" target="_blank" class="link-insta"><i class="fa-brands fa-instagram"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
