@@ -8,6 +8,7 @@
         padding: 0;
         box-sizing: border-box; /* Corrigir box-sizing */
         user-select: none; /* Desativa a seleção de texto */
+        
     }
 
     /* Definindo a fonte padrão para o corpo da página */
@@ -344,6 +345,104 @@
 
     #itens-carrinho p {
         margin-top: 20px; /* Adiciona margin-top à mensagem "Seu carrinho está vazio" */
+    }
+
+    /* Estilo para a tabela de pedidos */
+    .container h3 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    #itens-carrinho-finalizacao {
+        margin: 0 auto;
+        width: 80%;
+        border-collapse: collapse;
+        
+    }
+
+    #itens-carrinho-finalizacao table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+        background-color: white; /* Fundo branco */
+    }
+
+    #itens-carrinho-finalizacao th, #itens-carrinho-finalizacao td {
+        border: 1px solid black; /* Linhas pretas */
+        padding: 8px;
+        text-align: center;
+    }
+
+    #itens-carrinho-finalizacao th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+    }
+
+    /* Estilo para o total */
+    #total-carrinho-finalizacao {
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    /* Estilo para o formulário de dados do cliente */
+    #form-finalizacao {
+        width: 80%;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adiciona sombra */
+    }
+
+    #form-finalizacao .form-group {
+        margin-bottom: 15px;
+    }
+
+    #form-finalizacao label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    #form-finalizacao input, #form-finalizacao textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+    #form-finalizacao textarea {
+        resize: none; /* Remove a ferramenta de redimensionamento */
+    }
+
+    #form-finalizacao .form-group div {
+        display: flex;
+        align-items: center;
+    }
+
+    #form-finalizacao .form-group div input {
+        width: auto;
+        margin-right: 10px;
+    }
+
+    #form-finalizacao .finalizar-compra {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+        margin-top: 20px;
+    }
+
+    #form-finalizacao .finalizar-compra:hover {
+        background-color: #45a049;
     }
 }
 
@@ -724,18 +823,15 @@
         width: 100%;
         border-collapse: collapse;
         margin-top: 20px; /* Adiciona margin-top à tabela */
-        
+        margin-left: auto; /* Centraliza a tabela */
+        margin-right: auto; /* Centraliza a tabela */
     }
 
     .sacola th, .sacola td {
-        border: 1px solid #ddd;
+        border: 1px solid black; /* Linhas pretas */
         padding: 10px;
         text-align: center;
-    }
-
-    .sacola th {
-        background-color: #f2f2f2;
-        font-weight: bold;
+        background-color: white; /* Fundo branco */
     }
 
     .item-carrinho {
@@ -758,6 +854,85 @@
 
     #itens-carrinho p {
         margin-top: 20px; /* Adiciona margin-top à mensagem "Seu carrinho está vazio" */
+    }
+
+    #form-finalizacao {
+        width: 95%; /* Ajusta a largura para dispositivos móveis */
+        padding: 20px; /* Ajusta o padding para dispositivos móveis */
+        border-radius: 10px; /* Adiciona borda arredondada */
+        background-color: #ffffff; /* Adiciona cor de fundo */
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Adiciona sombra */
+        margin-top: 20px; /* Adiciona margem superior */
+    }
+
+    #form-finalizacao .form-group {
+        display: flex;
+        flex-direction: column; /* Coloca o label em cima e o input embaixo */
+        margin-bottom: 15px;
+    }
+
+    #form-finalizacao input, #form-finalizacao textarea {
+        padding: 12px; /* Ajusta o padding dos inputs para dispositivos móveis */
+        font-size: 16px; /* Ajusta o tamanho da fonte dos inputs */
+        border-radius: 10px;
+    }
+
+    #form-finalizacao .finalizar-compra {
+        padding: 12px; /* Ajusta o padding do botão para dispositivos móveis */
+        font-size: 18px; /* Ajusta o tamanho da fonte do botão para dispositivos móveis */
+        background-color: #ff5722; /* Altera a cor de fundo do botão */
+        border-radius: 8px; /* Ajusta o raio da borda do botão */
+    }
+
+    #form-finalizacao .finalizar-compra:hover {
+        background-color: #e64a19; /* Altera a cor de fundo do botão ao passar o mouse */
+    }
+
+    #itens-carrinho-finalizacao {
+        width: 100%; /* Ajusta a largura da tabela para dispositivos móveis */
+        margin: 0 auto; /* Centraliza a tabela */
+        border-collapse: collapse; /* Adiciona colapso na tabela */
+        overflow-x: auto; /* Permite overflow horizontal */
+    }
+
+    #itens-carrinho-finalizacao table {
+        width: 100%; /* Garante que a tabela ocupe toda a largura disponível */
+        margin: 0 auto; /* Centraliza a tabela */
+    }
+
+    #itens-carrinho-finalizacao th, #itens-carrinho-finalizacao td {
+        padding: 10px; /* Ajusta o padding das células da tabela para dispositivos móveis */
+        border: 1px solid #ddd; /* Linhas cinzas */
+        background-color: #f9f9f9; /* Fundo cinza claro */
+        font-size: 14px; /* Ajusta o tamanho da fonte das células */
+    }
+
+    #total-carrinho-finalizacao {
+        font-size: 20px; /* Ajusta o tamanho da fonte do total para dispositivos móveis */
+        color: #ff5722; /* Altera a cor do texto do total */
+        margin-top: 10px; /* Adiciona margem superior */
+    }
+
+    .container h3 {
+        font-size: 20px; /* Ajusta o tamanho da fonte do título para dispositivos móveis */
+        color: #333; /* Altera a cor do texto do título */
+        margin-bottom: 15px; /* Ajusta a margem inferior do título */
+    }
+
+    .sacola table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px; /* Adiciona margin-top à tabela */
+        margin-left: auto; /* Centraliza a tabela */
+        margin-right: auto; /* Centraliza a tabela */
+    }
+
+    .sacola th, .sacola td {
+        border: 1px solid #ddd; /* Linhas cinzas */
+        padding: 10px;
+        text-align: center;
+        background-color: #f9f9f9; /* Fundo cinza claro */
+        font-size: 14px; /* Ajusta o tamanho da fonte das células */
     }
 }
 
