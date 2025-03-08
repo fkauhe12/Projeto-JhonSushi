@@ -123,6 +123,7 @@ function removerItem(index) {
 
     // Atualiza a exibição dos itens do carrinho
     exibirItensCarrinho();
+    exibirItensCarrinhoFinalizacao(); // Atualiza a tabela de pedidos na página de finalização
 }
 
 // Função para finalizar a compra
