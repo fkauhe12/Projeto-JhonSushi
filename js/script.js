@@ -174,6 +174,9 @@ function exibirItensCarrinhoFinalizacao() {
 
     if (carrinho.length === 0) {
         tabelaPedidos.innerHTML = '<tr><td colspan="3">Seu carrinho está vazio.</td></tr>';
+        // Redireciona para a página inicial se o carrinho estiver vazio
+        alert('Seu carrinho está vazio. Redirecionando para a página inicial...');
+        window.location.href = 'index.html';
     } else {
         carrinho.forEach(item => {
             const linha = document.createElement('tr');
