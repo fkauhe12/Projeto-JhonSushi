@@ -43,14 +43,15 @@ function adicionar(nomeItem, preco) {
     const qtdCarrinho = document.getElementById('qtd-carrinho');
     qtdCarrinho.textContent = calcularTotalItens();
 
+    // Atualiza a quantidade total de itens na sacola flutuante
+    const qtdItensSacola = document.getElementById('qtd-itens-sacola');
+    qtdItensSacola.textContent = calcularTotalItens();
+
     // Salva as mudanças no carrinho e no total
     salvarCarrinho();
 
     // Atualiza a exibição dos itens no carrinho
     exibirItensCarrinho();
-
-    // Redireciona para a sacola
-    expandirSacola(); // Adicionada esta linha para redirecionar para a sacola
 }
 
 // Função para calcular o total de itens no carrinho
@@ -118,6 +119,10 @@ function removerItem(index) {
     const qtdCarrinho = document.getElementById('qtd-carrinho');
     qtdCarrinho.textContent = calcularTotalItens();
 
+    // Atualiza a quantidade total de itens na sacola flutuante
+    const qtdItensSacola = document.getElementById('qtd-itens-sacola');
+    qtdItensSacola.textContent = calcularTotalItens();
+
     // Salva as mudanças no carrinho e no total
     salvarCarrinho();
 
@@ -133,6 +138,10 @@ function finalizarCompra() {
         return;
     }
 
+    // Salva os dados do pedido no localStorage
+    localStorage.setItem('pedido', JSON.stringify(carrinho));
+    localStorage.setItem('totalPedido', totalCarrinho.toFixed(2));
+
     // Aqui você pode redirecionar o usuário para um formulário ou página de pagamento.
     alert('Compra Finalizada! Redirecionando para o formulário de pagamento...');
     
@@ -144,6 +153,10 @@ function finalizarCompra() {
 function atualizarQtdCarrinho() {
     const qtdCarrinho = document.getElementById('qtd-carrinho');
     qtdCarrinho.textContent = calcularTotalItens();  // Atualiza a quantidade de itens no carrinho
+
+    // Atualiza a quantidade total de itens na sacola flutuante
+    const qtdItensSacola = document.getElementById('qtd-itens-sacola');
+    qtdItensSacola.textContent = calcularTotalItens();
 }
 
 // Função para definir a página atual como ativa na navegação
@@ -159,13 +172,6 @@ function definirPaginaAtiva() {
         }
     });
 }
-
-// Quando a página for carregada, exibir os itens do carrinho
-window.onload = function() {
-    exibirItensCarrinho();
-    atualizarQtdCarrinho();  // Atualiza a quantidade de itens no carrinho logo ao carregar a página
-    definirPaginaAtiva();  // Define a página atual como ativa na navegação
-};
 
 // Função para exibir os itens do carrinho na página de finalização
 function exibirItensCarrinhoFinalizacao() {
@@ -197,6 +203,58 @@ function exibirItensCarrinhoFinalizacao() {
 
 // Quando a página for carregada, exibir os itens do carrinho na finalização
 window.addEventListener('load', function() {
-    exibirItensCarrinhoFinalizacao();
-    definirPaginaAtiva();  // Certifique-se de que a função é chamada aqui também
+    exibirItensCarrinho();
+    atualizarQtdCarrinho();  // Atualiza a quantidade de itens no carrinho logo ao carregar a página
+    definirPaginaAtiva();  // Define a página atual como ativa na navegação
+    if (carrinho.length > 0) {
+        mostrarSacolaFlutuante();  // Exibe a sacola flutuante se houver itens no carrinho
+    }
+    exibirItensCarrinhoFinalizacao();  // Exibe os itens do carrinho na página de finalização
+});
+
+// Exibir a sacola flutuante quando houver itens no carrinho
+function mostrarSacolaFlutuante() {
+    var sacola = document.getElementById('floating-bar');
+    if (sacola) {
+        sacola.style.display = 'block';
+        atualizarQtdCarrinho();  // Atualiza a quantidade de itens na sacola flutuante
+    }
+}
+
+// Ocultar a sacola flutuante
+function esconderSacolaFlutuante() {
+    var sacola = document.getElementById('floating-bar');
+    if (sacola) {
+        sacola.style.display = 'none';
+    }
+}
+
+// Recuperar os dados do pedido na página de pagamento
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.location.pathname.endsWith('formpagamento.html')) {
+        const pedido = JSON.parse(localStorage.getItem('pedido')) || [];
+        const totalPedido = parseFloat(localStorage.getItem('totalPedido')) || 0;
+
+        const tabelaPedidos = document.getElementById('tabela-pedidos');
+        tabelaPedidos.innerHTML = '';  // Limpa a tabela de pedidos
+
+        if (pedido.length === 0) {
+            tabelaPedidos.innerHTML = '<tr><td colspan="3">Seu carrinho está vazio.</td></tr>';
+        } else {
+            pedido.forEach(item => {
+                const linha = document.createElement('tr');
+                const valorTotalItem = item.preco * item.quantidade;
+                linha.innerHTML = `
+                    <td>${item.nome}</td>
+                    <td>${item.quantidade}</td>
+                    <td>${valorTotalItem.toFixed(2)}</td>
+                `;
+                tabelaPedidos.appendChild(linha);
+            });
+        }
+
+        // Atualiza o total
+        const totalPedidoDiv = document.getElementById('total-carrinho-finalizacao');
+        totalPedidoDiv.innerHTML = `<p>Total: R$ ${totalPedido.toFixed(2)}</p>`;
+    }
 });

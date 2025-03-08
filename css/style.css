@@ -1064,3 +1064,24 @@ h3 {
     margin-top: 2%;
     padding: 2%;
 }
+.floating-bar {
+    position: fixed;
+    bottom: 0;
+    left: 2%;
+    width: 96%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    z-index: 1000;
+    display: none;
+}
+
+.floating-bar button {
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
