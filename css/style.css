@@ -39,7 +39,7 @@
     }
 
     .logo img {
-        width: 35%;
+        width: 30%;
         border-radius: 50%;
     }
 
@@ -85,7 +85,7 @@
     button.admin i {
         font-size: 6vw;
         border-radius: 50%;
-        padding: 10px;
+        padding: 8px;
         background-color: white;
         color: #333;
         margin: auto;
@@ -130,7 +130,7 @@
 
     .link-nav.active {
         font-weight: bold; /* Adiciona negrito à página atual */
-        color: red; /* Adiciona cor vermelha à página atual */
+        color: red ; /* Adiciona cor vermelha à página atual */
     }
 
     /* Título da página Niguiri */
@@ -362,15 +362,15 @@
 
     #itens-carrinho-finalizacao table {
         width: 100%;
-        border-collapse: collapse;
-        margin-bottom: 20px;
-        background-color: white; /* Fundo branco */
+        border-radius: 10px;
     }
 
     #itens-carrinho-finalizacao th, #itens-carrinho-finalizacao td {
-        border: 1px solid black; /* Linhas pretas */
-        padding: 8px;
-        text-align: center;
+        padding: 10px; /* Ajusta o padding das células da tabela para dispositivos móveis */
+        border: 1px solid #ddd; /* Linhas cinzas */
+        background-color: #f9f9f9; /* Fundo cinza claro */
+        font-size: 16px; /* Ajusta o tamanho da fonte das células */
+        text-align: center; /* Centraliza o texto */
     }
 
     #itens-carrinho-finalizacao th {
@@ -556,7 +556,7 @@
     }
 
     .logo img {
-        width: 80%;
+        width: 65%;
         height: 80%;
         border-radius: 50%;
         margin: auto;
@@ -607,7 +607,7 @@
     button.admin i {
         font-size: 10vw;
         border-radius: 50%;
-        padding: 10px;
+        padding: 8px;
         background-color: white;
         color: #333;
         margin: auto;
@@ -905,6 +905,7 @@
         border: 1px solid #ddd; /* Linhas cinzas */
         background-color: #f9f9f9; /* Fundo cinza claro */
         font-size: 14px; /* Ajusta o tamanho da fonte das células */
+        text-align: center; /* Centraliza o texto */
     }
 
     #total-carrinho-finalizacao {
