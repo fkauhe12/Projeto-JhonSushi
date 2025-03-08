@@ -153,6 +153,8 @@ function definirPaginaAtiva() {
     linksNav.forEach(link => {
         if (link.getAttribute('href') === paginaAtual) {
             link.classList.add('active');
+        } else {
+            link.classList.remove('active'); // Remove a classe active dos outros links
         }
     });
 }
@@ -164,32 +166,33 @@ window.onload = function() {
     definirPaginaAtiva();  // Define a página atual como ativa na navegação
 };
 
-        // Função para exibir os itens do carrinho na página de finalização
-        function exibirItensCarrinhoFinalizacao() {
-            const tabelaPedidos = document.getElementById('tabela-pedidos');
-            tabelaPedidos.innerHTML = '';  // Limpa a tabela de pedidos
+// Função para exibir os itens do carrinho na página de finalização
+function exibirItensCarrinhoFinalizacao() {
+    const tabelaPedidos = document.getElementById('tabela-pedidos');
+    tabelaPedidos.innerHTML = '';  // Limpa a tabela de pedidos
 
-            if (carrinho.length === 0) {
-                tabelaPedidos.innerHTML = '<tr><td colspan="3">Seu carrinho está vazio.</td></tr>';
-            } else {
-                carrinho.forEach(item => {
-                    const linha = document.createElement('tr');
-                    const valorTotalItem = item.preco * item.quantidade;
-                    linha.innerHTML = `
-                        <td>${item.nome}</td>
-                        <td>${item.quantidade}</td>
-                        <td>${valorTotalItem.toFixed(2)}</td>
-                    `;
-                    tabelaPedidos.appendChild(linha);
-                });
-            }
+    if (carrinho.length === 0) {
+        tabelaPedidos.innerHTML = '<tr><td colspan="3">Seu carrinho está vazio.</td></tr>';
+    } else {
+        carrinho.forEach(item => {
+            const linha = document.createElement('tr');
+            const valorTotalItem = item.preco * item.quantidade;
+            linha.innerHTML = `
+                <td>${item.nome}</td>
+                <td>${item.quantidade}</td>
+                <td>${valorTotalItem.toFixed(2)}</td>
+            `;
+            tabelaPedidos.appendChild(linha);
+        });
+    }
 
-            // Atualiza o total
-            const totalCarrinhoFinalizacao = document.getElementById('total-carrinho-finalizacao');
-            totalCarrinhoFinalizacao.innerHTML = `<p>Total: R$ ${totalCarrinho.toFixed(2)}</p>`;
-        }
+    // Atualiza o total
+    const totalCarrinhoFinalizacao = document.getElementById('total-carrinho-finalizacao');
+    totalCarrinhoFinalizacao.innerHTML = `<p>Total: R$ ${totalCarrinho.toFixed(2)}</p>`;
+}
 
-        // Quando a página for carregada, exibir os itens do carrinho na finalização
-        window.onload = function() {
-            exibirItensCarrinhoFinalizacao();
-        };
+// Quando a página for carregada, exibir os itens do carrinho na finalização
+window.addEventListener('load', function() {
+    exibirItensCarrinhoFinalizacao();
+    definirPaginaAtiva();  // Certifique-se de que a função é chamada aqui também
+});
