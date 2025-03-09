@@ -45,13 +45,18 @@ function adicionar(nomeItem, preco) {
 
     // Atualiza a quantidade total de itens na sacola flutuante
     const qtdItensSacola = document.getElementById('qtd-itens-sacola');
-    qtdItensSacola.textContent = calcularTotalItens();
+    if (qtdItensSacola) {
+        qtdItensSacola.textContent = calcularTotalItens();
+    }
 
     // Salva as mudanças no carrinho e no total
     salvarCarrinho();
 
     // Atualiza a exibição dos itens no carrinho
     exibirItensCarrinho();
+
+    // Exibe a sacola flutuante
+    mostrarSacolaFlutuante();
 }
 
 // Função para calcular o total de itens no carrinho
@@ -131,6 +136,9 @@ function removerItem(index) {
     // Atualiza a exibição dos itens do carrinho
     exibirItensCarrinho();
     exibirItensCarrinhoFinalizacao(); // Atualiza a tabela de pedidos na página de finalização
+
+    // Exibe a sacola flutuante
+    mostrarSacolaFlutuante();
 }
 
 // Função para finalizar a compra
