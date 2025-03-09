@@ -242,6 +242,55 @@ function removerItemFinalizacao(index) {
     }
 }
 
+// Função para selecionar a opção de entrega
+function selecionarOpcao(opcao) {
+    const botoes = document.querySelectorAll('.botao-entrega');
+    botoes.forEach(botao => {
+        botao.classList.remove('active');
+    });
+
+    const botaoSelecionado = document.querySelector(`.botao-entrega[onclick="selecionarOpcao('${opcao}')"]`);
+    botaoSelecionado.classList.add('active');
+
+    const inputOpcaoEntrega = document.getElementById('opcao_entrega');
+    inputOpcaoEntrega.value = opcao;
+
+    const enderecoEntrega = document.getElementById('endereco-entrega');
+    if (opcao === 'entrega') {
+        enderecoEntrega.style.display = 'block';
+    } else {
+        enderecoEntrega.style.display = 'none';
+    }
+}
+
+// Função para preencher automaticamente o endereço com base no CEP
+function preencherEndereco() {
+    const cep = document.getElementById('cep').value.replace(/\D/g, '');
+    if (cep !== '') {
+        const validacep = /^[0-9]{8}$/;
+        if (validacep.test(cep)) {
+            fetch(`https://viacep.com.br/ws/${cep}/json/`)
+                .then(response => response.json())
+                .then(data => {
+                    if (!data.erro) {
+                        document.getElementById('rua').value = data.logradouro;
+                        document.getElementById('bairro').value = data.bairro;
+                        document.getElementById('cidade').value = data.localidade;
+                        document.getElementById('uf').value = data.uf;
+                    } else {
+                        alert('CEP não encontrado.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Erro ao buscar o CEP:', error);
+                    alert('Erro ao buscar o CEP.');
+                });
+        } else {
+            alert('Formato de CEP inválido.');
+        }
+    }
+}
+
 // Quando a página for carregada, exibir os itens do carrinho na finalização
 window.addEventListener('load', function() {
     exibirItensCarrinho();
