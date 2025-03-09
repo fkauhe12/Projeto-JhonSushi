@@ -24,6 +24,24 @@ function minimizarSacola() {
     sacola.style.display = 'none'; // Esconde a sacola
 }
 
+// Função para exibir uma mensagem temporária com contador
+function exibirMensagem(mensagem) {
+    const mensagemDiv = document.createElement('div');
+    mensagemDiv.className = 'mensagem-temporaria';
+    mensagemDiv.innerHTML = `${mensagem} <span id="contador">3</span>s`;
+    document.body.appendChild(mensagemDiv);
+
+    let contador = 3;
+    const intervalo = setInterval(() => {
+        contador--;
+        document.getElementById('contador').textContent = contador;
+        if (contador === 0) {
+            clearInterval(intervalo);
+            mensagemDiv.remove();
+        }
+    }, 1000);
+}
+
 // Função para adicionar item no carrinho
 function adicionar(nomeItem, preco) {
     // Verifica se o item já está no carrinho
@@ -36,8 +54,8 @@ function adicionar(nomeItem, preco) {
     }
     totalCarrinho += preco; // Atualiza o total do carrinho
 
-    // Exibe o alerta com o nome do produto e o preço
-    alert(`Produto Adicionado: ${nomeItem}\nPreço: R$ ${preco.toFixed(2)}`);
+    // Exibe a mensagem temporária com o nome do produto e o preço
+    exibirMensagem(`Produto Adicionado: ${nomeItem}\nPreço: R$ ${preco.toFixed(2)}`);
 
     // Atualiza a quantidade total de itens no botão de carrinho
     const qtdCarrinho = document.getElementById('qtd-carrinho');
@@ -144,7 +162,7 @@ function removerItem(index) {
 // Função para finalizar a compra
 function finalizarCompra() {
     if (carrinho.length === 0) {
-        alert('O carrinho está vazio. Adicione itens para finalizar a compra.');
+        exibirMensagem('O carrinho está vazio. Adicione itens para finalizar a compra.');
         return;
     }
 
@@ -152,11 +170,11 @@ function finalizarCompra() {
     localStorage.setItem('pedido', JSON.stringify(carrinho));
     localStorage.setItem('totalPedido', totalCarrinho.toFixed(2));
 
-    // Aqui você pode redirecionar o usuário para um formulário ou página de pagamento.
-    alert('Compra Finalizada! Redirecionando para o formulário de pagamento...');
-    
-    // Exemplo de redirecionamento para um formulário de pagamento
-    window.location.href = 'formpagamento.html';  // Modifique para o seu link de pagamento real
+    // Exibe a mensagem temporária e redireciona para o formulário de pagamento
+    exibirMensagem('Compra Finalizada! Redirecionando para o formulário de pagamento...');
+    setTimeout(() => {
+        window.location.href = 'formpagamento.html';  // Modifique para o seu link de pagamento real
+    }, 3000);
 }
 
 // Função para atualizar a quantidade de itens no carrinho
@@ -191,8 +209,10 @@ function exibirItensCarrinhoFinalizacao() {
     if (carrinho.length === 0) {
         tabelaPedidos.innerHTML = '<tr><td colspan="4">Seu carrinho está vazio.</td></tr>';
         // Redireciona para a página inicial se o carrinho estiver vazio
-        alert('Seu carrinho está vazio. Redirecionando para a página inicial...');
-        window.location.href = 'index.html';
+        exibirMensagem('Seu carrinho está vazio. Redirecionando para a página inicial...');
+        setTimeout(() => {
+            window.location.href = 'index.html';
+        }, 3000);
     } else {
         carrinho.forEach((item, index) => {
             const linha = document.createElement('tr');
@@ -278,15 +298,15 @@ function preencherEndereco() {
                         document.getElementById('cidade').value = data.localidade;
                         document.getElementById('uf').value = data.uf;
                     } else {
-                        alert('CEP não encontrado.');
+                        exibirMensagem('CEP não encontrado.');
                     }
                 })
                 .catch(error => {
                     console.error('Erro ao buscar o CEP:', error);
-                    alert('Erro ao buscar o CEP.');
+                    exibirMensagem('Erro ao buscar o CEP.');
                 });
         } else {
-            alert('Formato de CEP inválido.');
+            exibirMensagem('Formato de CEP inválido.');
         }
     }
 }
