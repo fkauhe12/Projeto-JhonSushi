@@ -1117,6 +1117,7 @@ h3 {
     padding: 10px;
     z-index: 1000;
     display: none;
+    backdrop-filter: blur(5px);
 }
 
 .floating-bar button {
