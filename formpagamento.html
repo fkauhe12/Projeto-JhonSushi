@@ -38,25 +38,8 @@
             <li><a href="temaki.html" class="link-nav">Temakis</a></li>
             <li><a href="combinado.html" class="link-nav">Combos</a></li>
             <li><a href="combinado.html" class="link-nav">Especiais</a></li>
-            <li><a href="javascript:void(0)" class="link-nav" onclick="expandirSacola()">
-                <i class="fa-solid fa-bag-shopping"></i> 
-                <span id="qtd-carrinho">0</span> itens
-            </a></li>
         </ul>
     </nav>
-
-    <!-- Carrinho Expandido -->
-    <div id="sacola" class="sacola" style="display: none;">
-        <button id="minimizar" class="minimizar" onclick="minimizarSacola()">
-            <i class="fa-light fa-x"></i>
-        </button>
-        <h3>Carrinho</h3>
-        <div id="itens-carrinho"></div>
-        <div id="total-carrinho">
-            <p>Total: R$ 0,00</p>
-        </div>
-        <button class="finalizar-compra" onclick="finalizarCompra()">Finalizar Compra</button>
-    </div>
 
     <!-- Título Finalizar Compra -->
     <div class="niguiri">
@@ -73,6 +56,7 @@
                         <th>Produto</th>
                         <th>Quantidade</th>
                         <th>Preço</th>
+                        <th>Excluir</th>
                     </tr>
                 </thead>
                 <tbody id="tabela-pedidos">
