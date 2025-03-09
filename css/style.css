@@ -1067,8 +1067,7 @@ h3 {
 .floating-bar {
     position: fixed;
     bottom: 0;
-    left: 2%;
-    width: 96%;
+    width: 100%;
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
     text-align: center;
@@ -1079,6 +1078,7 @@ h3 {
 
 .floating-bar button {
     background-color: #ff6347;
+    border-radius: 10px;
     color: white;
     border: none;
     padding: 10px 20px;
