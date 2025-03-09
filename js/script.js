@@ -121,7 +121,9 @@ function removerItem(index) {
 
     // Atualiza a quantidade total de itens na sacola flutuante
     const qtdItensSacola = document.getElementById('qtd-itens-sacola');
-    qtdItensSacola.textContent = calcularTotalItens();
+    if (qtdItensSacola) {
+        qtdItensSacola.textContent = calcularTotalItens();
+    }
 
     // Salva as mudanças no carrinho e no total
     salvarCarrinho();
@@ -179,18 +181,19 @@ function exibirItensCarrinhoFinalizacao() {
     tabelaPedidos.innerHTML = '';  // Limpa a tabela de pedidos
 
     if (carrinho.length === 0) {
-        tabelaPedidos.innerHTML = '<tr><td colspan="3">Seu carrinho está vazio.</td></tr>';
+        tabelaPedidos.innerHTML = '<tr><td colspan="4">Seu carrinho está vazio.</td></tr>';
         // Redireciona para a página inicial se o carrinho estiver vazio
         alert('Seu carrinho está vazio. Redirecionando para a página inicial...');
         window.location.href = 'index.html';
     } else {
-        carrinho.forEach(item => {
+        carrinho.forEach((item, index) => {
             const linha = document.createElement('tr');
             const valorTotalItem = item.preco * item.quantidade;
             linha.innerHTML = `
                 <td>${item.nome}</td>
                 <td>${item.quantidade}</td>
                 <td>${valorTotalItem.toFixed(2)}</td>
+                <td><button onclick="removerItemFinalizacao(${index})"><i class="fas fa-trash"></i></button></td>
             `;
             tabelaPedidos.appendChild(linha);
         });
@@ -199,6 +202,36 @@ function exibirItensCarrinhoFinalizacao() {
     // Atualiza o total
     const totalCarrinhoFinalizacao = document.getElementById('total-carrinho-finalizacao');
     totalCarrinhoFinalizacao.innerHTML = `<p>Total: R$ ${totalCarrinho.toFixed(2)}</p>`;
+}
+
+// Função para remover item do carrinho na página de finalização
+function removerItemFinalizacao(index) {
+    // Remove o item do carrinho
+    const itemRemovido = carrinho.splice(index, 1)[0]; 
+    totalCarrinho -= itemRemovido.preco * itemRemovido.quantidade;  // Atualiza o total
+
+    // Garante que o total não seja negativo
+    if (totalCarrinho < 0) {
+        totalCarrinho = 0;
+    }
+
+    // Salva as mudanças no carrinho e no total
+    salvarCarrinho();
+
+    // Atualiza a exibição dos itens do carrinho
+    exibirItensCarrinhoFinalizacao();  // Atualiza a tabela de pedidos na página de finalização
+
+    // Atualiza a quantidade total de itens no botão de carrinho
+    const qtdCarrinho = document.getElementById('qtd-carrinho');
+    if (qtdCarrinho) {
+        qtdCarrinho.textContent = calcularTotalItens();
+    }
+
+    // Atualiza a quantidade total de itens na sacola flutuante
+    const qtdItensSacola = document.getElementById('qtd-itens-sacola');
+    if (qtdItensSacola) {
+        qtdItensSacola.textContent = calcularTotalItens();
+    }
 }
 
 // Quando a página for carregada, exibir os itens do carrinho na finalização
@@ -239,15 +272,16 @@ document.addEventListener('DOMContentLoaded', function() {
         tabelaPedidos.innerHTML = '';  // Limpa a tabela de pedidos
 
         if (pedido.length === 0) {
-            tabelaPedidos.innerHTML = '<tr><td colspan="3">Seu carrinho está vazio.</td></tr>';
+            tabelaPedidos.innerHTML = '<tr><td colspan="4">Seu carrinho está vazio.</td></tr>';
         } else {
-            pedido.forEach(item => {
+            pedido.forEach((item, index) => {
                 const linha = document.createElement('tr');
                 const valorTotalItem = item.preco * item.quantidade;
                 linha.innerHTML = `
                     <td>${item.nome}</td>
                     <td>${item.quantidade}</td>
                     <td>${valorTotalItem.toFixed(2)}</td>
+                    <td><button onclick="removerItemFinalizacao(${index})"><i class="fas fa-trash"></i></button></td>
                 `;
                 tabelaPedidos.appendChild(linha);
             });
