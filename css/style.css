@@ -1085,3 +1085,48 @@ h3 {
     cursor: pointer;
     font-size: 16px;
 }
+
+.opcoes-entrega {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adiciona uma separação entre os botões */
+}
+
+.opcao-entrega {
+    display: inline-block;
+}
+
+.botao-entrega {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+    text-align: center;
+}
+
+.botao-entrega i {
+    font-size: 24px;
+    margin-right: 5px;
+}
+
+.botao-entrega:hover {
+    background-color: #f0f0f0;
+    border-color: #bbb;
+}
+
+.botao-entrega.active {
+    background-color: #4CAF50;
+    color: white;
+    border-color: #4CAF50;
+}
+
+input[type="radio"]:checked + .botao-entrega {
+    background-color: #4CAF50;
+    color: white;
+    border-color: #4CAF50;
+}
