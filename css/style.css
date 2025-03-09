@@ -444,6 +444,20 @@
     #form-finalizacao .finalizar-compra:hover {
         background-color: #45a049;
     }
+
+    .mensagem-temporaria {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        font-size: 16px;
+        text-align: center;
+    }
 }
 
 /* Estilos específicos para tablets (largura entre 768px e 1024px) */
@@ -515,6 +529,20 @@
         color: transparent;
         background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
         background-clip: text;
+    }
+
+    .mensagem-temporaria {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        font-size: 16px;
+        text-align: center;
     }
 }
 
@@ -934,6 +962,21 @@
         text-align: center;
         background-color: #f9f9f9; /* Fundo cinza claro */
         font-size: 14px; /* Ajusta o tamanho da fonte das células */
+    }
+
+    .mensagem-temporaria {
+        position: fixed;
+        width: 90%;
+        top: 20px;
+        right: 5px;
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        font-size: 16px;
+        text-align: center;
     }
 }
 
