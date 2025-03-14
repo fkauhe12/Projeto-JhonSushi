@@ -306,6 +306,7 @@
         max-height: 600px; /* Aumenta a altura máxima da sacola */
         overflow-y: auto;
         z-index: 999;
+        border-radius: 10px;
     }
 
     .sacola table {
@@ -874,11 +875,13 @@
         background-clip: text;
     }
 
+    /* Estilos para a sacola */
     .sacola {
         display: none; /* Inicialmente a sacola está escondida */
         position: fixed; /* Usamos fixed para fixar a sacola na tela */
         top: 80px; /* Posiciona a sacola abaixo do cabeçalho e do botão da sacola */
-        right: 10px; /* Posiciona a sacola na parte direita */
+        border-radius: 10px;
+        right: 3px; /* Posiciona a sacola na parte direita */
         background-color: #fff;
         padding: 20px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -1122,21 +1125,7 @@ h3 {
     cursor: pointer;
 }
 
-/* Estilos para a sacola */
-.sacola {
-    display: none; /* Inicialmente a sacola está escondida */
-    position: fixed; /* Usamos fixed para fixar a sacola na tela */
-    top: 80px; /* Posiciona a sacola abaixo do cabeçalho e do botão da sacola */
-    border-radius: 10px;
-    right: 10px; /* Posiciona a sacola na parte direita */
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 400px; /* Aumenta a largura da sacola */
-    max-height: 600px; /* Aumenta a altura máxima da sacola */
-    overflow-y: auto;
-    z-index: 999;
-}
+
 
 .finalizar-compra {
     background-color: #4CAF50;
