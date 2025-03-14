@@ -267,6 +267,14 @@ function removerItemFinalizacao(index) {
 
 // Função para selecionar a opção de entrega
 function selecionarOpcao(opcao) {
+    const nome = document.getElementById('nome').value.trim();
+    const telefone = document.getElementById('telefone').value.trim();
+
+    if (!nome || !telefone) {
+        exibirMensagem('Por favor, preencha os campos Nome e Telefone antes de selecionar a opção de entrega.', true);
+        return;
+    }
+
     const botoes = document.querySelectorAll('.botao-entrega');
     botoes.forEach(botao => {
         botao.classList.remove('active');
@@ -284,6 +292,20 @@ function selecionarOpcao(opcao) {
     } else {
         enderecoEntrega.style.display = 'none';
     }
+}
+
+// Função para selecionar o método de pagamento
+function selecionarPagamento(metodo) {
+    const botoes = document.querySelectorAll('.botao-pagamento');
+    botoes.forEach(botao => {
+        botao.classList.remove('active');
+    });
+
+    const botaoSelecionado = document.querySelector(`.botao-pagamento[onclick="selecionarPagamento('${metodo}')"]`);
+    botaoSelecionado.classList.add('active');
+
+    const inputMetodoPagamento = document.getElementById('metodo_pagamento');
+    inputMetodoPagamento.value = metodo;
 }
 
 // Função para preencher automaticamente o endereço com base no CEP
