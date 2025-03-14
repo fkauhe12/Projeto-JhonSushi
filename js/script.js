@@ -265,13 +265,36 @@ function removerItemFinalizacao(index) {
     }
 }
 
+// Função para verificar campos obrigatórios
+function verificarCamposObrigatorios(campos) {
+    let todosPreenchidos = true;
+    let camposFaltantes = [];
+
+    campos.forEach(campoId => {
+        const campo = document.getElementById(campoId);
+        if (!campo.value.trim()) {
+            todosPreenchidos = false;
+            camposFaltantes.push(campoId);
+        } else {
+            campo.style.borderColor = 'black';
+        }
+    });
+
+    if (!todosPreenchidos) {
+        camposFaltantes.forEach(campoId => {
+            const campo = document.getElementById(campoId);
+            campo.style.borderColor = 'orange';
+        });
+        exibirMensagem(`Por favor, preencha os seguintes campos: ${camposFaltantes.join(', ')}`, true);
+    }
+
+    return todosPreenchidos;
+}
+
 // Função para selecionar a opção de entrega
 function selecionarOpcao(opcao) {
-    const nome = document.getElementById('nome').value.trim();
-    const telefone = document.getElementById('telefone').value.trim();
-
-    if (!nome || !telefone) {
-        exibirMensagem('Por favor, preencha os campos Nome e Telefone antes de selecionar a opção de entrega.', true);
+    const camposObrigatorios = ['nome', 'telefone'];
+    if (!verificarCamposObrigatorios(camposObrigatorios)) {
         return;
     }
 
@@ -287,15 +310,23 @@ function selecionarOpcao(opcao) {
     inputOpcaoEntrega.value = opcao;
 
     const enderecoEntrega = document.getElementById('endereco-entrega');
+    const containerMetodoPagamento = document.getElementById('container-metodo-pagamento');
     if (opcao === 'entrega') {
         enderecoEntrega.style.display = 'block';
+        containerMetodoPagamento.style.display = 'block';
     } else {
         enderecoEntrega.style.display = 'none';
+        containerMetodoPagamento.style.display = 'none';
     }
 }
 
 // Função para selecionar o método de pagamento
 function selecionarPagamento(metodo) {
+    const camposObrigatorios = ['cep', 'rua', 'numero', 'bairro', 'cidade', 'uf'];
+    if (!verificarCamposObrigatorios(camposObrigatorios)) {
+        return;
+    }
+
     const botoes = document.querySelectorAll('.botao-pagamento');
     botoes.forEach(botao => {
         botao.classList.remove('active');
@@ -335,6 +366,20 @@ function preencherEndereco() {
         }
     }
 }
+
+// Adiciona evento de verificação aos campos obrigatórios
+document.addEventListener('DOMContentLoaded', function() {
+    const camposObrigatorios = ['nome', 'telefone', 'cep', 'rua', 'bairro', 'cidade', 'uf'];
+    camposObrigatorios.forEach(campoId => {
+        const campo = document.getElementById(campoId);
+        campo.addEventListener('input', () => {
+            campo.style.borderColor = 'black';
+        });
+    });
+
+    // Esconder métodos de pagamento inicialmente
+    document.getElementById('container-metodo-pagamento').style.display = 'none';
+});
 
 // Quando a página for carregada, exibir os itens do carrinho na finalização
 window.addEventListener('load', function() {
