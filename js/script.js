@@ -25,9 +25,12 @@ function minimizarSacola() {
 }
 
 // Função para exibir uma mensagem temporária com contador
-function exibirMensagem(mensagem) {
+function exibirMensagem(mensagem, isError = false) {
     const mensagemDiv = document.createElement('div');
     mensagemDiv.className = 'mensagem-temporaria';
+    if (isError) {
+        mensagemDiv.classList.add('mensagem-erro');
+    }
     mensagemDiv.innerHTML = `${mensagem} <span id="contador">3</span>s`;
     document.body.appendChild(mensagemDiv);
 
@@ -162,7 +165,7 @@ function removerItem(index) {
 // Função para finalizar a compra
 function finalizarCompra() {
     if (carrinho.length === 0) {
-        exibirMensagem('O carrinho está vazio. Adicione itens para finalizar a compra.');
+        exibirMensagem('O carrinho está vazio. Adicione itens para finalizar a compra.', true);
         return;
     }
 
@@ -367,5 +370,16 @@ document.addEventListener('DOMContentLoaded', function() {
         // Atualiza o total
         const totalPedidoDiv = document.getElementById('total-carrinho-finalizacao');
         totalPedidoDiv.innerHTML = `<p>Total: R$ ${totalPedido.toFixed(2)}</p>`;
+    }
+});
+
+// Redirecionar para a página inicial se a sacola estiver vazia
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.location.pathname.endsWith('formpagamento.html')) {
+        const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+        if (carrinho.length === 0) {
+            alert('Seu carrinho está vazio. Redirecionando para a página inicial...');
+            window.location.href = 'index.html';
+        }
     }
 });
