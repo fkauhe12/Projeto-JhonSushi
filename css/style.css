@@ -325,6 +325,20 @@
         font-weight: bold;
     }
 
+    .sacola td button {
+        background-color: red; /* Define a cor de fundo do botão como vermelho */
+        color: white; /* Define a cor do texto como branco */
+        border: none; /* Remove a borda do botão */
+        padding: 5px 10px; /* Adiciona padding ao botão */
+        cursor: pointer; /* Define o cursor como pointer */
+        border-radius: 5px; /* Adiciona borda arredondada */
+        transition: background-color 0.3s; /* Adiciona uma transição suave para a cor de fundo */
+    }
+
+    .sacola td button:hover {
+        background-color: darkred; /* Altera a cor de fundo ao passar o mouse */
+    }
+
     .item-carrinho {
         display: flex;
         justify-content: space-between;
@@ -373,11 +387,27 @@
         background-color: #f9f9f9; /* Fundo cinza claro */
         font-size: 16px; /* Ajusta o tamanho da fonte das células */
         text-align: center; /* Centraliza o texto */
+        border-radius: 10px;
     }
 
     #itens-carrinho-finalizacao th {
         background-color: #f2f2f2;
         font-weight: bold;
+    }
+
+    /* Estilos para o botão de excluir na tabela de pedidos da página de finalização */
+    #itens-carrinho-finalizacao td button {
+        background-color: red; /* Define a cor de fundo do botão como vermelho */
+        color: white; /* Define a cor do texto como branco */
+        border: none; /* Remove a borda do botão */
+        padding: 5px 15px; /* Adiciona padding ao botão */
+        cursor: pointer; /* Define o cursor como pointer */
+        border-radius: 5px; /* Adiciona borda arredondada */
+        transition: background-color 0.3s; /* Adiciona uma transição suave para a cor de fundo */
+    }
+
+    #itens-carrinho-finalizacao td button:hover {
+        background-color: darkred; /* Altera a cor de fundo ao passar o mouse */
     }
 
     /* Estilo para o total */
@@ -873,6 +903,21 @@
         background-color: white; /* Fundo branco */
     }
 
+    .sacola td button {
+        background-color: red; /* Define a cor de fundo do botão como vermelho */
+        color: white; /* Define a cor do texto como branco */
+        border: none; /* Remove a borda do botão */
+        padding: 5px 10px; /* Adiciona padding ao botão */
+        cursor: pointer; /* Define o cursor como pointer */
+        border-radius: 5px; /* Adiciona borda arredondada */
+        transition: background-color 0.3s; /* Adiciona uma transição suave para a cor de fundo */
+
+    }
+
+    .sacola td button:hover {
+        background-color: darkred; /* Altera a cor de fundo ao passar o mouse */
+    }
+
     .item-carrinho {
         display: flex;
         justify-content: space-between;
@@ -945,6 +990,21 @@
         background-color: #f9f9f9; /* Fundo cinza claro */
         font-size: 14px; /* Ajusta o tamanho da fonte das células */
         text-align: center; /* Centraliza o texto */
+    }
+
+    /* Estilos para o botão de excluir na tabela de pedidos da página de finalização */
+    #itens-carrinho-finalizacao td button {
+        background-color: red; /* Define a cor de fundo do botão como vermelho */
+        color: white; /* Define a cor do texto como branco */
+        border: none; /* Remove a borda do botão */
+        padding: 5px 10px; /* Adiciona padding ao botão */
+        cursor: pointer; /* Define o cursor como pointer */
+        border-radius: 5px; /* Adiciona borda arredondada */
+        transition: background-color 0.3s; /* Adiciona uma transição suave para a cor de fundo */
+    }
+
+    #itens-carrinho-finalizacao td button:hover {
+        background-color: darkred; /* Altera a cor de fundo ao passar o mouse */
     }
 
     #total-carrinho-finalizacao {
