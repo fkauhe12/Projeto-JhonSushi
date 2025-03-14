@@ -127,6 +127,27 @@
                     <input type="text" id="uf" name="uf">
                 </div>
             </div>
+            <div class="form-group">
+                <label>Método de Pagamento:</label>
+                <div class="opcoes-pagamento">
+                    <div class="opcao-pagamento">
+                        <button type="button" class="botao-pagamento" onclick="selecionarPagamento('dinheiro')">
+                            <i class="fas fa-money-bill-wave"></i> Dinheiro
+                        </button>
+                    </div>
+                    <div class="opcao-pagamento">
+                        <button type="button" class="botao-pagamento" onclick="selecionarPagamento('debito')">
+                            <i class="fas fa-credit-card"></i> Débito
+                        </button>
+                    </div>
+                    <div class="opcao-pagamento">
+                        <button type="button" class="botao-pagamento" onclick="selecionarPagamento('credito')">
+                            <i class="fas fa-credit-card"></i> Crédito
+                        </button>
+                    </div>
+                </div>
+                <input type="hidden" id="metodo_pagamento" name="metodo_pagamento" required>
+            </div>
             <button type="submit" class="finalizar-compra">Confirmar Pedido</button>
         </form>
     </div>
