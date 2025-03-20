@@ -367,6 +367,69 @@ function preencherEndereco() {
     }
 }
 
+// Função para capturar os dados do formulário e enviar a nota via WhatsApp
+function enviarNotaWhatsApp(event) {
+    event.preventDefault(); // Previne o comportamento padrão do formulário
+
+    const nome = document.getElementById('nome').value.trim();
+    const telefone = document.getElementById('telefone').value.trim();
+    const opcaoEntrega = document.getElementById('opcao_entrega').value.trim();
+    const metodoPagamento = document.getElementById('metodo_pagamento').value.trim();
+
+    if (!nome || !telefone || !opcaoEntrega || !metodoPagamento) {
+        exibirMensagem('Por favor, preencha todos os campos obrigatórios antes de confirmar o pedido.', true);
+        return;
+    }
+
+    let mensagem = `*Nota do Pedido - Jhon Sushi*%0A`;
+    mensagem += `*Nome:* ${nome}%0A`;
+    mensagem += `*Telefone:* ${telefone}%0A`;
+    mensagem += `*Opção de Entrega:* ${opcaoEntrega}%0A`;
+
+    if (opcaoEntrega === 'entrega') {
+        const cep = document.getElementById('cep').value.trim();
+        const rua = document.getElementById('rua').value.trim();
+        const numero = document.getElementById('numero').value.trim();
+        const complemento = document.getElementById('complemento').value.trim();
+        const bairro = document.getElementById('bairro').value.trim();
+        const cidade = document.getElementById('cidade').value.trim();
+        const uf = document.getElementById('uf').value.trim();
+
+        if (!cep || !rua || !numero || !bairro || !cidade || !uf) {
+            exibirMensagem('Por favor, preencha todos os campos de endereço para entrega.', true);
+            return;
+        }
+
+        mensagem += `*Endereço:*%0A`;
+        mensagem += `CEP: ${cep}%0A`;
+        mensagem += `Rua: ${rua}, Nº: ${numero}%0A`;
+        if (complemento) mensagem += `Complemento: ${complemento}%0A`;
+        mensagem += `Bairro: ${bairro}%0A`;
+        mensagem += `Cidade: ${cidade} - ${uf}%0A`;
+    }
+
+    mensagem += `*Método de Pagamento:* ${metodoPagamento}%0A%0A`;
+    mensagem += `*Itens do Pedido:*%0A`;
+
+    carrinho.forEach(item => {
+        mensagem += `- ${item.nome} (Qtd: ${item.quantidade}) - R$ ${item.preco.toFixed(2)}%0A`;
+    });
+
+    mensagem += `%0A*Total do Pedido:* R$ ${totalCarrinho.toFixed(2)}`;
+
+    // Redirecionar para o WhatsApp
+    const numeroWhatsApp = '5588997962265'; // Substitua pelo número do WhatsApp do restaurante
+    const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensagem}`;
+    window.open(urlWhatsApp, '_blank');
+
+    // Limpa o carrinho após finalizar o pedido
+    carrinho = [];
+    totalCarrinho = 0;
+    salvarCarrinho();
+    exibirItensCarrinho();
+    exibirMensagem('Pedido confirmado e enviado via WhatsApp!');
+}
+
 // Adiciona evento de verificação aos campos obrigatórios
 document.addEventListener('DOMContentLoaded', function() {
     const camposObrigatorios = ['nome', 'telefone', 'cep', 'rua', 'bairro', 'cidade', 'uf'];
